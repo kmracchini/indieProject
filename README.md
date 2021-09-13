@@ -1,9 +1,12 @@
 # Kristin Racchini Individual Project
 
-###Problem Statement
+### Problem Statement
+There is a website called [Ravelry](http://www.ravelry.com) which is a popular resource for knitters and crocheters to find patterns based on criteria, save patterns that they like, and keep other helpful information.  
 
-###Project Techniques / Technologies
+Currently, there is no equivalent website for cross stitch patterns.  Patterns can be found on individual designer webpages or on sites like Etsy on Pinterest, but there is no way currently to search patterns using different criteria.  The goal of this website is to be a repository of cross stitch patterns, and to provide searchability for users.   
 
-###Design
+### Project Techniques / Technologies
 
-###Project Plan 
+### Design
+
+### Project Plan 
