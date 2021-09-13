@@ -13,5 +13,5 @@ To begin with, I will start with free patterns available from designers on their
 
 ### Project Plan 
 
-####[Journal](Journal.md)
-####[Time Log](TimeLog.md)
+#### [Journal](Journal.md)
+#### [Time Log](TimeLog.md)
