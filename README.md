@@ -12,3 +12,6 @@ To begin with, I will start with free patterns available from designers on their
 ### Design
 
 ### Project Plan 
+
+####[Journal](Journal.md)
+####[Time Log](TimeLog.md)
