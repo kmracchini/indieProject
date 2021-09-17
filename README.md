@@ -12,7 +12,7 @@ To begin with, I will start with free patterns available from designers on their
 ### Design
 * [User Stories](DesignDocuments/userStories.md)
 
-### Project Plan 
+### [Project Plan](ProjectPlan.md)
 
 #### [Journal](Journal.md)
 #### [Time Log](TimeLog.md)
