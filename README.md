@@ -10,6 +10,7 @@ To begin with, I will start with free patterns available from designers on their
 ### Project Techniques / Technologies
 
 ### Design
+* [User Stories](DesignDocuments/userStories.md)
 
 ### Project Plan 
 
