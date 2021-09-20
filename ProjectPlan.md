@@ -1,10 +1,10 @@
 # Project Plan
 
 ### Week 3
-- [ ] Begin problem statement and user stories 
+- [X] Begin problem statement and user stories 
 - [X] Begin project plan 
 - [ ] Brainstorm screen design 
-- [ ] Link to repository in student list 
+- [X] Link to repository in student list 
 
 ### Week 4 - Checkpoint! 
 - [ ] Gussy up problem statement and user stories in preparation for checkpoint 
@@ -14,7 +14,7 @@
 #### Checkpoint items: Problem statement, user stories, project plan, screen design and reflection statements pushed to GitHub. Be sure to identify which stories are part of the Minimum Viable Product (MVP). Link to your repository in student presentation list. 
 
 ### Week 5
-- [ ] 
+- [ ] Create database and brainstorm diagram 
 
 ### Week 6
 - [ ] 

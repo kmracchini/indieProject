@@ -13,6 +13,4 @@ To begin with, I will start with free patterns available from designers on their
 * [User Stories](DesignDocuments/userStories.md)
 
 ### [Project Plan](ProjectPlan.md)
-
-#### [Journal](Journal.md)
 #### [Time Log](TimeLog.md)
