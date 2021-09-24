@@ -16,22 +16,26 @@
 
 ### Week 5
 - [ ] Create database and brainstorm diagram 
-- [ ] One to many 
+- [ ] 
 
 ### Week 6
 - [ ] Deploy whatever I have to AWS 
 - [ ] Explore Etsy API as possibility for site
+- [ ] Add any database tables that don't exist yet
 
 ### Week 7 - Checkpoint! 
-- [ ] 
+- [ ] Pattern search JSP and servlet  
+- [ ] Browse pattern JSP and servlet
+- [ ] Complete unit testing for DAO
 
 #### Checkpoint items: Database designed and created, at least one DAO with full CRUD (create, read, update, delete) implemented with Hibernate, DAO is fully unit tested, Log4J is implemented (no System.out.printlns).
 
 ### Week 8
-- [ ] 
+- [ ] Implement security and authentication on website
+- [ ] User sign up and log in JSPs and servlets
 
 ### Week 9 - Checkpoint! 
-- [ ] 
+- [ ] User favorite JSP and servlet
 
 #### Checkpoint items: Deployed to AWS, at least one JSP that displays data from the database is implemented, authentication implemented (log in capability).
 
