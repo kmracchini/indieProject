@@ -6,6 +6,10 @@
 * [Satsuma Street](satsumastreet.com)
 * [Tiny Modernist](tinymodernist.com)
 * [Fiddlesticks](fiddlesticksau.com)
+* [Asleep at the Stitch](https://www.reddit.com/user/AsleepAtTheStitch/comments/l8189e/hi_im_asleepatthestitch_pattern_links_inside/)
+* [Peppermint Purple](peppermintpurple.com/pages/specials-and-freebies)
+* [Night Spirit Studio](nightspiritstudio.com/freebies)
+* [Cross Stitch Quest](crossstitchquest.net)
 
 ## Pattern data points 
 * Author 

@@ -10,14 +10,17 @@
 - [ ] Gussy up problem statement and user stories in preparation for checkpoint 
 - [ ] Create docs for screen design and link in ReadMe 
 - [ ] Finish up project plan 
+- [ ] Figure out what Hibernate is, and start implementing it in project 
 
 #### Checkpoint items: Problem statement, user stories, project plan, screen design and reflection statements pushed to GitHub. Be sure to identify which stories are part of the Minimum Viable Product (MVP). Link to your repository in student presentation list. 
 
 ### Week 5
 - [ ] Create database and brainstorm diagram 
+- [ ] One to many 
 
 ### Week 6
-- [ ] 
+- [ ] Deploy whatever I have to AWS 
+- [ ] Explore Etsy API as possibility for site
 
 ### Week 7 - Checkpoint! 
 - [ ] 
@@ -45,7 +48,8 @@
 - [ ] 
 
 ### Week 14 - Peer Code Review 
-- [ ] 
+- [ ] Complete Peer Code Review
+- [ ] Implement any code changes from peer review 
 
 ### Week 15
 - [ ] Final Presentation
