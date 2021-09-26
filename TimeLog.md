@@ -8,3 +8,7 @@
 |9/18/21| Worked on week 3 work using log4j and junit on week-2-user-display, got ListTest unit tests working on week-3-exercise|4
 |9/19/21| Completed week 3 exercise | 3
 |9/19/21| Added code and files to be able to implement Log4J and JUnit in project. Started brainstorming table names, columns, connections between tables.| 2|
+|9/22/21| Slogging away at project plan - it did not go so well| 2|
+|9/23/21| Created wireframes for main screens and added to git | 2.5 | 
+|9/25/21| Worked on project plan | 1 | 
+|9/26/21| Worked on project plan and Week 4 hibernate exercise | 3 | 

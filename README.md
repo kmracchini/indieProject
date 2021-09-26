@@ -11,6 +11,6 @@ To begin with, I will start with free patterns available from designers on their
 
 ### Design
 * [User Stories](DesignDocuments/userStories.md)
-
-### [Project Plan](ProjectPlan.md)
-#### [Time Log](TimeLog.md)
+* [Screen Design](DesignDocuments/ScreenDesign)
+* [Project Plan](ProjectPlan.md)
+* [Time Log](TimeLog.md)
