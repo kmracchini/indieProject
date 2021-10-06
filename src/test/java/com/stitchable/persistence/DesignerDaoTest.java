@@ -54,4 +54,20 @@ public class DesignerDaoTest {
         Designer insertedDesigner = (Designer)dao.getById(id);
         assertEquals(newDesigner,insertedDesigner);
     }
+
+    @Test
+    void deleteSuccess() {
+        dao.delete(dao.getById(1));
+        assertNull(dao.getById(1));
+    }
+
+    @Test
+    void saveOrUpdateSuccess() {
+        String newDesignerName = "Made Up Designer";
+        Designer designerToUpdate = (Designer)dao.getById(2);
+        designerToUpdate.setName(newDesignerName);
+        dao.saveOrUpdate(designerToUpdate);
+        Designer retrievedDesigner = (Designer)dao.getById(2);
+        assertEquals(designerToUpdate,retrievedDesigner);
+    }
 }
