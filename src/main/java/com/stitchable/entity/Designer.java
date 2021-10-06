@@ -21,9 +21,6 @@ public class Designer {
     private String website;
     private String logo;
 
-    @Column(name = "user_id")
-    private int userId;
-
     /**
      * Instantiates a new Designer.
      */
@@ -54,33 +51,6 @@ public class Designer {
         this.logo = logo;
     }
 
-    /**
-     * Instantiates a new Designer.
-     *
-     * @param name    the name
-     * @param website the website
-     * @param userId  the user id
-     */
-    public Designer(String name, String website, int userId) {
-        this.name = name;
-        this.website = website;
-        this.userId = userId;
-    }
-
-    /**
-     * Instantiates a new Designer.
-     *
-     * @param name    the name
-     * @param website the website
-     * @param logo    the logo
-     * @param userId  the user id
-     */
-    public Designer(String name, String website, String logo, int userId) {
-        this.name = name;
-        this.website = website;
-        this.logo = logo;
-        this.userId = userId;
-    }
 
     /**
      * Gets name.
@@ -136,23 +106,6 @@ public class Designer {
         this.logo = logo;
     }
 
-    /**
-     * Gets user id.
-     *
-     * @return the user id
-     */
-    public int getUserId() {
-        return userId;
-    }
-
-    /**
-     * Sets user id.
-     *
-     * @param userId the user id
-     */
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
 
     @Override
     public String toString() {
