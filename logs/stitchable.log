@@ -1,0 +1,15 @@
+[ERROR] 2021-10-05 19:55:03.024 [main] Database - java.sql.SQLException: Can not issue empty query.
+[ERROR] 2021-10-05 19:55:09.288 [main] Database - java.sql.SQLException: Can not issue empty query.
+[INFO ] 2021-10-05 19:55:13.335 [main] GenericDao - I'm testing out a class com.stitchable.entity.User entity.
+[INFO ] 2021-10-05 19:55:13.390 [main] GenericDao - My entity is com.stitchable.entity.User@134a8ead
+[ERROR] 2021-10-05 19:56:15.869 [main] Database - java.sql.SQLException: Can not issue empty query.
+[ERROR] 2021-10-05 19:56:27.552 [main] Database - java.sql.SQLException: Can not issue empty query.
+[INFO ] 2021-10-05 19:56:30.129 [main] GenericDao - I'm testing out a class com.stitchable.entity.User entity.
+[INFO ] 2021-10-05 19:56:30.177 [main] GenericDao - My entity is com.stitchable.entity.User@134a8ead
+[ERROR] 2021-10-05 19:57:30.290 [main] Database - java.sql.SQLException: Can not issue empty query.
+[ERROR] 2021-10-05 20:16:49.352 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2021-10-05 20:20:37.017 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2021-10-05 20:22:34.570 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2021-10-05 20:24:17.971 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2021-10-05 20:28:34.014 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2021-10-05 20:30:53.261 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1

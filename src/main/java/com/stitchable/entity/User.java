@@ -4,6 +4,7 @@ package com.stitchable.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 /**
  * The type User.
@@ -25,9 +26,6 @@ public class User {
 
     private String password;
 
-    @Column(name = "is_admin")
-    private boolean isAdmin;
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
@@ -47,15 +45,13 @@ public class User {
      * @param email     the email
      * @param userName  the user name
      * @param password  the password
-     * @param isAdmin   the is admin
      */
-    public User(String firstName, String lastName, String email, String userName, String password, boolean isAdmin) {
+    public User(String firstName, String lastName, String email, String userName, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.userName = userName;
         this.password = password;
-        this.isAdmin = isAdmin;
     }
 
     /**
@@ -148,21 +144,27 @@ public class User {
         this.password = password;
     }
 
-    /**
-     * Is admin boolean.
-     *
-     * @return the boolean
-     */
-    public boolean isAdmin() {
-        return isAdmin;
+    @Override
+    public String toString() {
+        return "User{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", userName='" + userName + '\'' +
+                ", id=" + id +
+                '}';
     }
 
-    /**
-     * Sets admin.
-     *
-     * @param admin the admin
-     */
-    public void setAdmin(boolean admin) {
-        isAdmin = admin;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id && firstName.equals(user.firstName) && lastName.equals(user.lastName) && email.equals(user.email) && userName.equals(user.userName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName, email, userName, id);
     }
 }
