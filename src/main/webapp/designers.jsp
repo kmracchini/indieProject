@@ -13,8 +13,6 @@
                 <h2 class="card-title">${designer.name}</h2>
                 <p class="card-text">${designer.website}</p>
             </div>
-
-
         </div>
     </c:forEach>
 </div>

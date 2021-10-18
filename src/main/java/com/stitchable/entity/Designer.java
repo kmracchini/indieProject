@@ -3,7 +3,9 @@ package com.stitchable.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * The type Designer.
@@ -20,6 +22,9 @@ public class Designer {
     private String name;
     private String website;
     private String logo;
+
+//    @OneToMany(mappedBy = "designer", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+//    private Set<Pattern> patterns = new HashSet<>();
 
     /**
      * Instantiates a new Designer.
