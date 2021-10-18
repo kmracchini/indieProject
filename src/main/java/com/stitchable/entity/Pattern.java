@@ -31,11 +31,8 @@ public class Pattern {
     private String image;
     private String url;
 
-    @Column(name = "designer_id")
-    private int designerId;
-
-//    @ManyToOne
-//    private Designer designer;
+    @ManyToOne
+    private Designer designer;
 
     /**
      * Instantiates a new Pattern.
@@ -55,10 +52,9 @@ public class Pattern {
      * @param stitchedExample the stitched example
      * @param image           the image
      * @param url             the url
-     * @param designerId      the designer id
      */
     public Pattern(String name, int width, int height, int numberOfColors, String keywords, String features,
-                   String stitchedExample, String image, String url, int designerId) {
+                   String stitchedExample, String image, String url, Designer designer) {
         this.name = name;
         this.width = width;
         this.height = height;
@@ -68,7 +64,7 @@ public class Pattern {
         this.stitchedExample = stitchedExample;
         this.image = image;
         this.url = url;
-        this.designerId = designerId;
+        this.designer = designer;
     }
 
     /**
@@ -252,21 +248,21 @@ public class Pattern {
     }
 
     /**
-     * Gets designer id.
+     * Gets designer.
      *
-     * @return the designer id
+     * @return the designer
      */
-    public int getDesignerId() {
-        return designerId;
+    public Designer getDesigner() {
+        return designer;
     }
 
     /**
-     * Sets designer id.
+     * Sets designer.
      *
-     * @param designerId the designer id
+     * @param designer the designer
      */
-    public void setDesignerId(int designerId) {
-        this.designerId = designerId;
+    public void setDesigner(Designer designer) {
+        this.designer = designer;
     }
 
     @Override
@@ -278,7 +274,7 @@ public class Pattern {
                 ", keywords='" + keywords + '\'' +
                 ", image='" + image + '\'' +
                 ", url='" + url + '\'' +
-                ", designerId=" + designerId +
+                ", designer=" + designer +
                 '}';
     }
 
@@ -287,12 +283,11 @@ public class Pattern {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Pattern pattern = (Pattern) o;
-        return id == pattern.id && numberOfColors == pattern.numberOfColors && designerId == pattern.designerId
-                && Objects.equals(name, pattern.name) && Objects.equals(stitchedExample, pattern.stitchedExample);
+        return numberOfColors == pattern.numberOfColors && Objects.equals(name, pattern.name) && Objects.equals(keywords, pattern.keywords) && Objects.equals(image, pattern.image) && Objects.equals(designer, pattern.designer);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, numberOfColors, stitchedExample, designerId);
+        return Objects.hash(name, numberOfColors, keywords, image, designer);
     }
 }

@@ -55,6 +55,8 @@ public class DesignerDaoTest {
         assertEquals(newDesigner,insertedDesigner);
     }
 
+    //TODO: Insert with pattern test
+
     @Test
     void deleteSuccess() {
         dao.delete(dao.getById(1));

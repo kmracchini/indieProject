@@ -1,5 +1,6 @@
 package com.stitchable.persistence;
 
+import com.stitchable.entity.Designer;
 import com.stitchable.entity.Pattern;
 import com.stitchable.testUtils.Database;
 import org.junit.jupiter.api.BeforeEach;
@@ -32,7 +33,7 @@ public class PatternDaoTest {
     void getByIdSuccess() {
         Pattern pattern = (Pattern)dao.getById(1);
         assertNotNull(pattern);
-        assertEquals(2, pattern.getDesignerId());
+        assertEquals(2, pattern.getDesigner());
     }
 
     @Test
@@ -49,8 +50,10 @@ public class PatternDaoTest {
 
     @Test
     void insertSuccess() {
+        GenericDao designerDao = new GenericDao(Designer.class);
+        Designer designer = (Designer)designerDao.getById(1);
         Pattern newPattern = new Pattern("Test Pattern", 50, 50, 2, "cool",
-                "Full Stitches Only", "No", "test.jpg", "http://www.google.com", 1);
+                "Full Stitches Only", "No", "test.jpg", "http://www.google.com", designer);
         int id = dao.insert(newPattern);
         assertNotEquals(0,id);
         Pattern insertedPattern = (Pattern)dao.getById(id);

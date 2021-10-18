@@ -23,8 +23,8 @@ public class Designer {
     private String website;
     private String logo;
 
-//    @OneToMany(mappedBy = "designer", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-//    private Set<Pattern> patterns = new HashSet<>();
+    @OneToMany(mappedBy = "designer", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Pattern> patterns = new HashSet<>();
 
     /**
      * Instantiates a new Designer.
@@ -111,6 +111,18 @@ public class Designer {
         this.logo = logo;
     }
 
+    public Set<Pattern> getPatterns() {
+        return patterns;
+    }
+
+    public void setPatterns(Set<Pattern> patterns) {
+        this.patterns = patterns;
+    }
+
+//    TODO: Add patterns to designer
+//    public void addPattern(Pattern pattern) {
+//        patterns.add(pattern);
+//    }
 
     @Override
     public String toString() {
