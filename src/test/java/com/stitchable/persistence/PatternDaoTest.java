@@ -21,4 +21,10 @@ public class PatternDaoTest {
         database.runSQL("reset.sql");
     }
 
+    @Test
+    void getAllSuccess() {
+        List<Pattern> patterns = dao.getAll();
+        assertEquals(2,patterns.size());
+    }
+
 }

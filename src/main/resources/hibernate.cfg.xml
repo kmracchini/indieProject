@@ -17,6 +17,7 @@
 
         <mapping class="com.stitchable.entity.Designer" />
         <mapping class="com.stitchable.entity.User" />
+        <mapping class="com.stitchable.entity.Pattern" />
 
     </session-factory>
 

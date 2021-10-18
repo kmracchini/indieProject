@@ -8,8 +8,8 @@ import java.util.Objects;
 /**
  * The type Pattern.
  */
-@Entity(name = "Pattern")
-@Table(name = "pattern")
+@Entity(name="Pattern")
+@Table(name="pattern")
 public class Pattern {
 
     @Id
