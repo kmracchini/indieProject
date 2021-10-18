@@ -5,9 +5,10 @@ import com.stitchable.testUtils.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import javax.validation.constraintvalidation.SupportedValidationTarget;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PatternDaoTest {
 
@@ -27,4 +28,48 @@ public class PatternDaoTest {
         assertEquals(2,patterns.size());
     }
 
+    @Test
+    void getByIdSuccess() {
+        Pattern pattern = (Pattern)dao.getById(1);
+        assertNotNull(pattern);
+        assertEquals(2, pattern.getDesignerId());
+    }
+
+    @Test
+    void getByPropertyEqualsSuccess() {
+        List<Pattern> patterns = dao.getByPropertyEquals("features","Full Stitches Only");
+        assertEquals(2, patterns.size());
+    }
+
+    @Test
+    void getByPropertyLikeSuccess() {
+        List<Pattern> patterns = dao.getByPropertyLike("url","http");
+        assertEquals(2, patterns.size());
+    }
+
+    @Test
+    void insertSuccess() {
+        Pattern newPattern = new Pattern("Test Pattern", 50, 50, 2, "cool",
+                "Full Stitches Only", "No", "test.jpg", "http://www.google.com", 1);
+        int id = dao.insert(newPattern);
+        assertNotEquals(0,id);
+        Pattern insertedPattern = (Pattern)dao.getById(id);
+        assertEquals(newPattern, insertedPattern);
+    }
+
+    @Test
+    void deleteSuccess() {
+        dao.delete(dao.getById(2));
+        assertNull(dao.getById(2));
+    }
+
+    @Test
+    void saveOrUpdateSuccess() {
+        String newPatternName = "Test Pattern";
+        Pattern patternToUpdate = (Pattern)dao.getById(1);
+        patternToUpdate.setName(newPatternName);
+        dao.saveOrUpdate(patternToUpdate);
+        Pattern retrievedPattern = (Pattern)dao.getById(1);
+        assertEquals(patternToUpdate, retrievedPattern);
+    }
 }
