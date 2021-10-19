@@ -10,21 +10,21 @@
 - [X] Gussy up problem statement and user stories in preparation for checkpoint 
 - [X] Create docs for screen design and link in ReadMe 
 - [X] Finish up project plan 
-- [ ] Figure out what Hibernate is, and start implementing it in project 
+- [X] Figure out what Hibernate is, and start implementing it in project 
 
 #### Checkpoint items: Problem statement, user stories, project plan, screen design and reflection statements pushed to GitHub. Be sure to identify which stories are part of the Minimum Viable Product (MVP). Link to your repository in student presentation list. 
 
 ### Week 5
-- [ ] Create database and brainstorm diagram 
-- [ ] Create user table and DAO
+- [X] Create database and brainstorm diagram 
+- [X] Create user table and DAO
 
 ### Week 6
-- [ ] Deploy whatever I have to AWS 
+- [X] Deploy whatever I have to AWS 
 - [ ] Explore Etsy API as possibility for site
-- [ ] Add any database tables that don't exist yet
+- [X] Add any database tables that don't exist yet
 
 ### Week 7 - Checkpoint! 
-- [ ] Complete unit testing for DAO
+- [X] Complete unit testing for DAO
 - [ ] Choose bootstrap theme for project 
 
 #### Checkpoint items: Database designed and created, at least one DAO with full CRUD (create, read, update, delete) implemented with Hibernate, DAO is fully unit tested, Log4J is implemented (no System.out.printlns).

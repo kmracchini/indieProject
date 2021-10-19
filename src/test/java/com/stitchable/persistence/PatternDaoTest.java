@@ -29,13 +29,16 @@ public class PatternDaoTest {
         assertEquals(2,patterns.size());
     }
 
-//    TODO: Need to fix this!
-//    @Test
-//    void getByIdSuccess() {
-//        Pattern pattern = (Pattern)dao.getById(1);
-//        assertNotNull(pattern);
-//        assertEquals(2, pattern.getDesigner());
-//    }
+    @Test
+    void getByIdSuccess() {
+        Pattern pattern = (Pattern)dao.getById(1);
+        assertNotNull(pattern);
+
+        GenericDao designerDao = new GenericDao(Designer.class);
+        Designer designer = (Designer)designerDao.getById(2);
+
+        assertEquals(designer, pattern.getDesigner());
+    }
 
     @Test
     void getByPropertyEqualsSuccess() {

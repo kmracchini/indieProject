@@ -17,3 +17,9 @@
 |10/3/21| Completed week 5 exercise | 2 | 
 |10/4/21| Started generic dao and user tests for user and designer | 2 | 
 |10/5/21| Finished unit testing, put some designer info on a JSP! | 3 | 
+|10/6/21| Added bootstrap for designers page | 2 |
+|10/9/21 - 10/11/21| Fighting with AWS - can't connect to database. Started with indie project, switched to user display, undid and redid and pounded my head against the wall.  | 5 |
+|10/12/21| Finally got AWS working somehow which I don't understand 
+|10/16/21| Completed aws cognito | 1 |
+|10/17/21| Created pattern entity and database table, started unit testing for patterns, created data table for displaying patterns | 3
+|10/18/21| Deployed updated code to AWS and broke it so I undid it | 2 | 
