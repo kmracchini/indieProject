@@ -23,3 +23,6 @@
 |10/16/21| Completed aws cognito | 1 |
 |10/17/21| Created pattern entity and database table, started unit testing for patterns, created data table for displaying patterns | 3
 |10/18/21| Deployed updated code to AWS and broke it so I undid it | 2 | 
+|10/19/21-11/5/21 | Ok I was definitely doing things... I just don't know what or how many. 
+|11/6/21|Team project work and weekly exercises | 2 | 
+|11/7/21| Cleaning up data, setting titles on pages, added bootstrap navbar, working on viewing patterns by designer | 2 | 

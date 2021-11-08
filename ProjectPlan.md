@@ -30,7 +30,7 @@
 #### Checkpoint items: Database designed and created, at least one DAO with full CRUD (create, read, update, delete) implemented with Hibernate, DAO is fully unit tested, Log4J is implemented (no System.out.printlns).
 
 ### Week 8
-- [ ] Implement security and authentication on website
+- [x] Implement security and authentication on website
 - [ ] User sign up and log in JSPs and servlets
 
 

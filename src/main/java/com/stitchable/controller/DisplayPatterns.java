@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(
-        urlPatterns = {"/viewPatterns"}
+        urlPatterns = {"/allPatterns"}
 )
 public class DisplayPatterns extends HttpServlet {
 

@@ -1,6 +1,8 @@
-<%@include file="head.jsp"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="title" value="All Patterns" />
+<c:set var="title" value="View All Patterns" />
+<%@include file="head.jsp"%>
+<%@include file="header.jsp"%>
+
 
 <script type="text/javascript" class="init">
     $(document).ready( function () {

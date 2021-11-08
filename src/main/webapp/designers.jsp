@@ -1,5 +1,8 @@
-<%@include file="head.jsp"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="title" value="View All Designers" />
+<%@include file="head.jsp"%>
+<%@include file="header.jsp"%>
+
 
 <html><body>
 
@@ -11,7 +14,8 @@
             <img class="img-fluid rounded mx-auto d-block" src="images/${designer.logo}" alt="${designer.name} logo"/>
             <div class="card-body">
                 <h2 class="card-title">${designer.name}</h2>
-                <p class="card-text">${designer.website}</p>
+                <p class="card-text"><a href="${designer.website}" target="_blank">Visit Website</a></p>
+                <p class="card-text"><a href="">View all patterns by ${designer.name} / use designer ID: ${designer.id}</a></p>
             </div>
         </div>
     </c:forEach>
