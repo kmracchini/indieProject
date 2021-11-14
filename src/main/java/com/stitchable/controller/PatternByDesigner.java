@@ -1,5 +1,6 @@
 package com.stitchable.controller;
 
+import com.stitchable.entity.Designer;
 import com.stitchable.entity.Pattern;
 import com.stitchable.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;
@@ -15,25 +16,22 @@ import java.io.IOException;
 
 
 @WebServlet(
-        urlPatterns = {"/patterns"}
+        urlPatterns = {"/designerPatterns"}
 )
 public class PatternByDesigner extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
-    //TODO: gotta rekajigger this bad boy
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-//    @Override
-//    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//
-//        GenericDao dao = new GenericDao(Pattern.class);
-//
-//        String id = request.getParameter("id");
-//
-//        request.setAttribute("patterns", dao.getByPropertyEquals("designer", id));
-//
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("/patterns.jsp");
-//        dispatcher.forward(request,response);
-//    }
+        GenericDao dao = new GenericDao(Designer.class);
+        int id = Integer.valueOf(request.getParameter("id"));
+
+        request.setAttribute("designer", dao.getById(id));
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/designerPatterns.jsp");
+        dispatcher.forward(request,response);
+    }
 
 }

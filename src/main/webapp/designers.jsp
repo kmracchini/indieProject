@@ -15,7 +15,7 @@
             <div class="card-body">
                 <h2 class="card-title">${designer.name}</h2>
                 <p class="card-text"><a href="${designer.website}" target="_blank">Visit Website</a></p>
-                <p class="card-text"><a href="">View all patterns by ${designer.name} / use designer ID: ${designer.id}</a></p>
+                <p class="card-text"><a href="designerPatterns?id=${designer.id}">View all patterns by ${designer.name}</a></p>
             </div>
         </div>
     </c:forEach>

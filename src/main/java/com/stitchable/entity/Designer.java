@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.util.Set;
 
 /**
- * The type Designer.
+ * Represents a designer
  */
 @Entity(name="Designer")
 @Table(name="designer")
@@ -128,18 +128,43 @@ public class Designer {
         this.logo = logo;
     }
 
+    /**
+     * Gets patterns.
+     *
+     * @return the patterns
+     */
     public Set<Pattern> getPatterns() {
         return patterns;
     }
 
+    /**
+     * Sets patterns.
+     *
+     * @param patterns the patterns
+     */
     public void setPatterns(Set<Pattern> patterns) {
         this.patterns = patterns;
     }
 
-//    TODO: Add patterns to designer
-//    public void addPattern(Pattern pattern) {
-//        patterns.add(pattern);
-//    }
+    /**
+     * Adds a pattern.
+     *
+     * @param pattern the pattern
+     */
+    public void addPattern(Pattern pattern) {
+        patterns.add(pattern);
+        pattern.setDesigner(this);
+    }
+
+    /**
+     * Removes a pattern.
+     *
+     * @param pattern the pattern
+     */
+    public void removePattern(Pattern pattern) {
+        patterns.remove(pattern);
+        pattern.setDesigner(null);
+    }
 
     @Override
     public String toString() {
