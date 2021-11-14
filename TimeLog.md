@@ -26,3 +26,4 @@
 |10/19/21-11/5/21 | Ok I was definitely doing things... I just don't know what or how many. 
 |11/6/21|Team project work and weekly exercises | 2 | 
 |11/7/21| Cleaning up data, setting titles on pages, added bootstrap navbar, working on viewing patterns by designer | 2 | 
+|11/13/21 | Started forms for editing and adding patterns and designers, created page for viewing all patterns by one designer, tried and failed to get /patterns page to display either all patterns by one designer if passed the ID as a parameter, OR all patterns... but I think I'll come back to that. | 2.5 |
