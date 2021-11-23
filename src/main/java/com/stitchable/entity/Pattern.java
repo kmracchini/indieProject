@@ -1,5 +1,7 @@
 package com.stitchable.entity;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -8,6 +10,8 @@ import java.util.Objects;
 /**
  * The type Pattern.
  */
+@NoArgsConstructor
+@Data
 @Entity(name="Pattern")
 @Table(name="pattern")
 public class Pattern {
@@ -34,11 +38,6 @@ public class Pattern {
     @ManyToOne
     private Designer designer;
 
-    /**
-     * Instantiates a new Pattern.
-     */
-    public Pattern() {
-    }
 
     /**
      * Instantiates a new Pattern.
@@ -52,6 +51,7 @@ public class Pattern {
      * @param stitchedExample the stitched example
      * @param image           the image
      * @param url             the url
+     * @param designer        the designer
      */
     public Pattern(String name, int width, int height, int numberOfColors, String keywords, String features,
                    String stitchedExample, String image, String url, Designer designer) {
@@ -65,217 +65,6 @@ public class Pattern {
         this.image = image;
         this.url = url;
         this.designer = designer;
-    }
-
-    /**
-     * Gets id.
-     *
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * Sets id.
-     *
-     * @param id the id
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
-     * Gets name.
-     *
-     * @return the name
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * Sets name.
-     *
-     * @param name the name
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * Gets width.
-     *
-     * @return the width
-     */
-    public int getWidth() {
-        return width;
-    }
-
-    /**
-     * Sets width.
-     *
-     * @param width the width
-     */
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    /**
-     * Gets height.
-     *
-     * @return the height
-     */
-    public int getHeight() {
-        return height;
-    }
-
-    /**
-     * Sets height.
-     *
-     * @param height the height
-     */
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
-    /**
-     * Gets number of colors.
-     *
-     * @return the number of colors
-     */
-    public int getNumberOfColors() {
-        return numberOfColors;
-    }
-
-    /**
-     * Sets number of colors.
-     *
-     * @param numberOfColors the number of colors
-     */
-    public void setNumberOfColors(int numberOfColors) {
-        this.numberOfColors = numberOfColors;
-    }
-
-    /**
-     * Gets keywords.
-     *
-     * @return the keywords
-     */
-    public String getKeywords() {
-        return keywords;
-    }
-
-    /**
-     * Sets keywords.
-     *
-     * @param keywords the keywords
-     */
-    public void setKeywords(String keywords) {
-        this.keywords = keywords;
-    }
-
-    /**
-     * Gets features.
-     *
-     * @return the features
-     */
-    public String getFeatures() {
-        return features;
-    }
-
-    /**
-     * Sets features.
-     *
-     * @param features the features
-     */
-    public void setFeatures(String features) {
-        this.features = features;
-    }
-
-    /**
-     * Gets stitched example.
-     *
-     * @return the stitched example
-     */
-    public String getStitchedExample() {
-        return stitchedExample;
-    }
-
-    /**
-     * Sets stitched example.
-     *
-     * @param stitchedExample the stitched example
-     */
-    public void setStitchedExample(String stitchedExample) {
-        this.stitchedExample = stitchedExample;
-    }
-
-    /**
-     * Gets image.
-     *
-     * @return the image
-     */
-    public String getImage() {
-        return image;
-    }
-
-    /**
-     * Sets image.
-     *
-     * @param image the image
-     */
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    /**
-     * Gets url.
-     *
-     * @return the url
-     */
-    public String getUrl() {
-        return url;
-    }
-
-    /**
-     * Sets url.
-     *
-     * @param url the url
-     */
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    /**
-     * Gets designer.
-     *
-     * @return the designer
-     */
-    public Designer getDesigner() {
-        return designer;
-    }
-
-    /**
-     * Sets designer.
-     *
-     * @param designer the designer
-     */
-    public void setDesigner(Designer designer) {
-        this.designer = designer;
-    }
-
-    @Override
-    public String toString() {
-        return "Pattern{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", numberOfColors=" + numberOfColors +
-                ", keywords='" + keywords + '\'' +
-                ", image='" + image + '\'' +
-                ", url='" + url + '\'' +
-                ", designer=" + designer +
-                '}';
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.stitchable.controller;
 
 import com.stitchable.entity.Pattern;
 import com.stitchable.persistence.GenericDao;
+import lombok.extern.log4j.Log4j2;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,9 +17,8 @@ import java.io.IOException;
 @WebServlet(
         urlPatterns = {"/editPattern"}
 )
+@Log4j2
 public class EditPattern extends HttpServlet {
-
-    private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

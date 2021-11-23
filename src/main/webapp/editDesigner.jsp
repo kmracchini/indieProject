@@ -15,8 +15,13 @@
     </div>
 
     <div class="form-group">
-      <label for="name">Designer website:</label>
+      <label for="website">Designer website:</label>
       <input type="text" class="form-control" id="website" name="website" value="${designer.website}">
+    </div>
+
+    <div class="form-group">
+      <label for="etsyId">Etsy shop ID:</label>
+      <input type="text" class="form-control" id="etsyId" name="etsyId" value="${designer.etsyId}">
     </div>
 
     <div class="form-group">

@@ -1,5 +1,6 @@
 package com.stitchable.entity;
 
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -10,6 +11,8 @@ import java.util.Set;
 /**
  * Represents a designer
  */
+@NoArgsConstructor
+@Data
 @Entity(name="Designer")
 @Table(name="designer")
 public class Designer {
@@ -23,14 +26,11 @@ public class Designer {
     private String website;
     private String logo;
 
+    @Column(name = "etsy_store")
+    private int etsyId;
+
     @OneToMany(mappedBy = "designer", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Pattern> patterns = new HashSet<>();
-
-    /**
-     * Instantiates a new Designer.
-     */
-    public Designer() {
-    }
 
     /**
      * Instantiates a new Designer.
@@ -57,76 +57,20 @@ public class Designer {
     }
 
     /**
-     * Gets id.
+     * Instantiates a new Designer.
      *
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * Sets id.
-     *
-     * @param id the id
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
-     * Gets name.
-     *
-     * @return the name
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * Sets name.
-     *
-     * @param name the name
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * Gets website.
-     *
-     * @return the website
-     */
-    public String getWebsite() {
-        return website;
-    }
-
-    /**
-     * Sets website.
-     *
+     * @param name    the name
      * @param website the website
+     * @param logo    the logo
+     * @param etsyId  the etsy id
      */
-    public void setWebsite(String website) {
+    public Designer(String name, String website, String logo, int etsyId) {
+        this.name = name;
         this.website = website;
-    }
-
-    /**
-     * Gets logo.
-     *
-     * @return the logo
-     */
-    public String getLogo() {
-        return logo;
-    }
-
-    /**
-     * Sets logo.
-     *
-     * @param logo the logo
-     */
-    public void setLogo(String logo) {
         this.logo = logo;
+        this.etsyId = etsyId;
     }
+
 
     /**
      * Gets patterns.
@@ -164,15 +108,6 @@ public class Designer {
     public void removePattern(Pattern pattern) {
         patterns.remove(pattern);
         pattern.setDesigner(null);
-    }
-
-    @Override
-    public String toString() {
-        return "Designer{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", website='" + website + '\'' +
-                '}';
     }
 
     @Override

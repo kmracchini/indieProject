@@ -31,13 +31,13 @@ public class UserDaoTest {
     void getByIdSuccess() {
         User retrievedUser = (User)dao.getById(2);
         assertNotNull(retrievedUser);
-        assertEquals("Rey", retrievedUser.getFirstName());
+        assertEquals("Rey Hinnendael", retrievedUser.getName());
     }
 
     @Test
     void getByPropertyEqualsSuccess() {
-        List<User> users = dao.getByPropertyEquals("lastName", "Racchini");
-        assertEquals(2,users.size());
+        List<User> users = dao.getByPropertyEquals("name", "Maleficent Racchini");
+        assertEquals(1,users.size());
     }
 
     @Test
@@ -48,7 +48,7 @@ public class UserDaoTest {
 
     @Test
     void insertSuccess() {
-        User newUser = new User("Figaro", "Hinnendael", "figaro@macarthurpark.com","FigaroTheCat","ILoveBlankies");
+        User newUser = new User("figaro@macarthurpark.com","FigaroTheCat","Figaro Hinnendael");
         int id = dao.insert(newUser);
         assertNotEquals(0,id);
         User insertedUser = (User)dao.getById(id);

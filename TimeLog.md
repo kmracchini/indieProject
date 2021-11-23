@@ -27,3 +27,6 @@
 |11/6/21|Team project work and weekly exercises | 2 | 
 |11/7/21| Cleaning up data, setting titles on pages, added bootstrap navbar, working on viewing patterns by designer | 2 | 
 |11/13/21 | Started forms for editing and adding patterns and designers, created page for viewing all patterns by one designer, tried and failed to get /patterns page to display either all patterns by one designer if passed the ID as a parameter, OR all patterns... but I think I'll come back to that. | 2.5 |
+|11/17/21 | Office hours to get help on Etsy API and working on implementing | 1 | 
+|11/20/21 | Getting the Etsy API up and running! Wahoo! Getting shop and listing information back | 3 | 
+|11/22/21 | Implementing project Lombok and adding forwarding to error page for authentication. Working on getting user data from cognito to use on site.  | 2.5

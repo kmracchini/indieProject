@@ -8,9 +8,8 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.stitchable.auth.*;
 import com.stitchable.util.PropertiesLoader;
+import lombok.extern.log4j.Log4j2;
 import org.apache.commons.io.*;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -47,7 +46,7 @@ import java.util.stream.Collectors;
 /**
  * Inspired by: https://stackoverflow.com/questions/52144721/how-to-get-access-token-using-client-credentials-using-java-code
  */
-
+@Log4j2
 public class Auth extends HttpServlet implements PropertiesLoader {
     Properties properties;
     String CLIENT_ID;
@@ -58,8 +57,6 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     String REGION;
     String POOL_ID;
     Keys jwks;
-
-    private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     public void init() throws ServletException {
@@ -81,7 +78,8 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         String userName = null;
 
         if (authCode == null) {
-            //TODO forward to an error page or back to the login
+            String url = "/error.jsp";
+            resp.sendRedirect(url);
         } else {
             HttpRequest authRequest = buildAuthRequest(authCode);
             try {
@@ -89,11 +87,13 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                 userName = validate(tokenResponse);
                 req.setAttribute("userName", userName);
             } catch (IOException e) {
-                logger.error("Error getting or validating the token: " + e.getMessage(), e);
-                //TODO forward to an error page
+                log.error("Error getting or validating the token: " + e.getMessage(), e);
+                String url = "/error.jsp";
+                resp.sendRedirect(url);
             } catch (InterruptedException e) {
-                logger.error("Error getting token from Cognito oauth url " + e.getMessage(), e);
-                //TODO forward to an error page
+                log.error("Error getting token from Cognito oauth url " + e.getMessage(), e);
+                String url = "/error.jsp";
+                resp.sendRedirect(url);
             }
         }
         RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
@@ -115,12 +115,12 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         response = client.send(authRequest, HttpResponse.BodyHandlers.ofString());
 
 
-        logger.debug("Response headers: " + response.headers().toString());
-        logger.debug("Response body: " + response.body().toString());
+        log.debug("Response headers: " + response.headers().toString());
+        log.debug("Response body: " + response.body().toString());
 
         ObjectMapper mapper = new ObjectMapper();
         TokenResponse tokenResponse = mapper.readValue(response.body().toString(), TokenResponse.class);
-        logger.debug("Id token: " + tokenResponse.getIdToken());
+        log.debug("Id token: " + tokenResponse.getIdToken());
 
         return tokenResponse;
 
@@ -152,9 +152,10 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         try {
             publicKey = KeyFactory.getInstance("RSA").generatePublic(new RSAPublicKeySpec(modulus, exponent));
         } catch (InvalidKeySpecException e) {
-            logger.error("Invalid Key Error " + e.getMessage(), e);
+            log.error("Invalid Key Error " + e.getMessage(), e);
+            String url = "/error.jsp";
         } catch (NoSuchAlgorithmException e) {
-            logger.error("Algorithm Error " + e.getMessage(), e);
+            log.error("Algorithm Error " + e.getMessage(), e);
         }
 
         // get an algorithm instance
@@ -171,9 +172,13 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         // Verify the token
         DecodedJWT jwt = verifier.verify(tokenResponse.getIdToken());
         String userName = jwt.getClaim("cognito:username").asString();
-        logger.debug("here's the username: " + userName);
+        String fullName = jwt.getClaim("name").asString();
+        String email = jwt.getClaim("email").asString();
+        log.debug("here's the username: " + userName);
+        log.debug("here's the name: " + fullName);
+        log.debug("here's their email: " + email);
 
-        logger.debug("here are all the available claims: " + jwt.getClaims());
+        log.debug("here are all the available claims: " + jwt.getClaims());
 
         // TODO decide what you want to do with the info!
         // for now, I'm just returning username for display back to the browser
@@ -226,11 +231,11 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             File jwksFile = new File("jwks.json");
             FileUtils.copyURLToFile(jwksURL, jwksFile);
             jwks = mapper.readValue(jwksFile, Keys.class);
-            logger.debug("Keys are loaded. Here's e: " + jwks.getKeys().get(0).getE());
+            log.debug("Keys are loaded. Here's e: " + jwks.getKeys().get(0).getE());
         } catch (IOException ioException) {
-            logger.error("Cannot load json..." + ioException.getMessage(), ioException);
+            log.error("Cannot load json..." + ioException.getMessage(), ioException);
         } catch (Exception e) {
-            logger.error("Error loading json" + e.getMessage(), e);
+            log.error("Error loading json" + e.getMessage(), e);
         }
     }
 
@@ -250,9 +255,9 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             REGION = properties.getProperty("region");
             POOL_ID = properties.getProperty("poolId");
         } catch (IOException ioException) {
-            logger.error("Cannot load properties..." + ioException.getMessage(), ioException);
+            log.error("Cannot load properties..." + ioException.getMessage(), ioException);
         } catch (Exception e) {
-            logger.error("Error loading properties" + e.getMessage(), e);
+            log.error("Error loading properties" + e.getMessage(), e);
         }
     }
 }
