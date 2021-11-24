@@ -30,3 +30,4 @@
 |11/17/21 | Office hours to get help on Etsy API and working on implementing | 1 | 
 |11/20/21 | Getting the Etsy API up and running! Wahoo! Getting shop and listing information back | 3 | 
 |11/22/21 | Implementing project Lombok and adding forwarding to error page for authentication. Working on getting user data from cognito to use on site.  | 2.5
+|11/23/21 | Still fighting with users/authentication. Added a search page and display results. Added queries for greater than and less than (for searching by number of colors in a pattern). | 4

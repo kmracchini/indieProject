@@ -6,16 +6,7 @@
 
 <html>
 <body>
-<h2>Hello World!</h2>
-<p><a href="viewDesigners">View Designers</a></p>
-<p><a href="viewPatterns">View Patterns</a></p>
-<c:choose>
-    <c:when test="${empty userName}">
-        <p><a href="logIn">Log In</a></li>
-    </c:when>
-    <c:otherwise>
-        <li class="nav-item mx-2">Hello ${userName}</li>
-    </c:otherwise>
-</c:choose>
+<h2>Stitchable</h2>
+<p>Stitchable is a project designed to help cross stichers find free patterns from designers they love. </p>
 </body>
 </html>

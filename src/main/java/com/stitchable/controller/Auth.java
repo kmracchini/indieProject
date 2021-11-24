@@ -78,7 +78,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         String userName = null;
 
         if (authCode == null) {
-            String url = "/error.jsp";
+            String url = "/logIn";
             resp.sendRedirect(url);
         } else {
             HttpRequest authRequest = buildAuthRequest(authCode);

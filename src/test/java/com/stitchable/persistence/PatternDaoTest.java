@@ -79,4 +79,16 @@ public class PatternDaoTest {
         Pattern retrievedPattern = (Pattern)dao.getById(1);
         assertEquals(patternToUpdate, retrievedPattern);
     }
+
+    @Test
+    void greaterThanSuccess() {
+        List<Pattern> patterns = dao.getByGreaterThan("numberOfColors", 2);
+        assertEquals(1, patterns.size());
+    }
+
+    @Test
+    void lessThanSuccess() {
+        List<Pattern> patterns = dao.getByLessThan("numberOfColors", 10);
+        assertEquals(2, patterns.size());
+    }
 }

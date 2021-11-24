@@ -4,6 +4,8 @@
 <%@include file="header.jsp"%>
 <html>
 <body>
+<c:set var="userName" value="${pageContext.request.getAttribute(userName)}">
+
 <c:choose>
   <c:when test="${empty userName}">
     <h2><a href="logIn">You need to log in to view this page.</a></h2>

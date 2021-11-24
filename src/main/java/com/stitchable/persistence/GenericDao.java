@@ -96,4 +96,25 @@ public class GenericDao<T> {
         return queryResults;
     }
 
+    public List<T> getByGreaterThan(String propertyName, int value) {
+        Session session = getSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery(type);
+        Root<T> root = query.from(type);
+        query.select(root).where(builder.greaterThanOrEqualTo(root.get(propertyName), value));
+        List<T> queryResults = session.createQuery(query).getResultList();
+        session.close();
+        return queryResults;
+    }
+
+    public List<T> getByLessThan(String propertyName, int value) {
+        Session session = getSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery(type);
+        Root<T> root = query.from(type);
+        query.select(root).where(builder.lessThanOrEqualTo(root.get(propertyName), value));
+        List<T> queryResults = session.createQuery(query).getResultList();
+        session.close();
+        return queryResults;
+    }
 }
