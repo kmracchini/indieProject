@@ -7,9 +7,15 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.stitchable.auth.*;
+import com.stitchable.entity.Designer;
+import com.stitchable.entity.SessionFactoryProvider;
+import com.stitchable.entity.User;
+import com.stitchable.persistence.GenericDao;
 import com.stitchable.util.PropertiesLoader;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.io.*;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,6 +23,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -58,6 +65,8 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     String POOL_ID;
     Keys jwks;
 
+    GenericDao dao = new GenericDao(User.class);
+
     @Override
     public void init() throws ServletException {
         super.init();
@@ -84,8 +93,11 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             HttpRequest authRequest = buildAuthRequest(authCode);
             try {
                 TokenResponse tokenResponse = getToken(authRequest);
-                userName = validate(tokenResponse);
-                req.setAttribute("userName", userName);
+                User user = validate(tokenResponse);
+                HttpSession session = req.getSession();
+                session.setAttribute("user", user);
+                //TODO: call user from database using username
+                //Get session, set attribute on session
             } catch (IOException e) {
                 log.error("Error getting or validating the token: " + e.getMessage(), e);
                 String url = "/error.jsp";
@@ -133,7 +145,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
      * @return
      * @throws IOException
      */
-    private String validate(TokenResponse tokenResponse) throws IOException {
+    private User validate(TokenResponse tokenResponse) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         CognitoTokenHeader tokenHeader = mapper.readValue(CognitoJWTParser.getHeader(tokenResponse.getIdToken()).toString(), CognitoTokenHeader.class);
 
@@ -153,9 +165,10 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             publicKey = KeyFactory.getInstance("RSA").generatePublic(new RSAPublicKeySpec(modulus, exponent));
         } catch (InvalidKeySpecException e) {
             log.error("Invalid Key Error " + e.getMessage(), e);
-            String url = "/error.jsp";
+
         } catch (NoSuchAlgorithmException e) {
             log.error("Algorithm Error " + e.getMessage(), e);
+
         }
 
         // get an algorithm instance
@@ -176,14 +189,38 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         String email = jwt.getClaim("email").asString();
         log.debug("here's the username: " + userName);
         log.debug("here's the name: " + fullName);
-        log.debug("here's their email: " + email);
+        log.debug("here's the email: " + email);
 
-        log.debug("here are all the available claims: " + jwt.getClaims());
+        boolean userExists = verifyUser(userName);
+        log.info("Here's the userexists boolean: " + userExists);
 
-        // TODO decide what you want to do with the info!
-        // for now, I'm just returning username for display back to the browser
+        User user;
 
-        return userName;
+        if (userExists) {
+            log.info("the user exists!");
+            user = (User) dao.getByPropertyEqualsUnique("userName", userName);
+        } else {
+            user = new User(fullName, email, userName, false);
+            dao.insert(user);
+            log.info("Just added a newbie to the database! " + userName);
+        }
+
+        return user;
+    }
+
+    private boolean verifyUser(String username) {
+        log.info("I'm verifying the user! " + username);
+        //TODO: This is where it gets stuck! If they already exist it's fine, otherwise it craps out.
+        //User user = (User) dao.getByPropertyEqualsUnique("userName", username);
+
+        boolean userExists;
+        if (dao.getByPropertyEqualsUnique("userName", username) != null) {
+            userExists = true;
+        } else {
+            userExists = false;
+        }
+        log.info("True or false- the user exists! : " + userExists);
+        return userExists;
     }
 
     /** Create the auth url and use it to build the request.

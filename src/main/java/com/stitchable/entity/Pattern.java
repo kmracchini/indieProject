@@ -6,6 +6,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * The type Pattern.
@@ -38,6 +39,9 @@ public class Pattern {
     @ManyToOne
     private Designer designer;
 
+    @ManyToMany(mappedBy = "favoritePatterns")
+    private Set<User> users;
+
 
     /**
      * Instantiates a new Pattern.
@@ -66,6 +70,8 @@ public class Pattern {
         this.url = url;
         this.designer = designer;
     }
+
+    //TODO: get size method?
 
     @Override
     public boolean equals(Object o) {

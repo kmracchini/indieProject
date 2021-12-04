@@ -1,11 +1,14 @@
 package com.stitchable.persistence;
 
+import com.stitchable.entity.Pattern;
 import com.stitchable.entity.User;
 import com.stitchable.testUtils.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -48,7 +51,7 @@ public class UserDaoTest {
 
     @Test
     void insertSuccess() {
-        User newUser = new User("figaro@macarthurpark.com","FigaroTheCat","Figaro Hinnendael");
+        User newUser = new User("figaro@macarthurpark.com","FigaroTheCat","Figaro Hinnendael", false);
         int id = dao.insert(newUser);
         assertNotEquals(0,id);
         User insertedUser = (User)dao.getById(id);
@@ -69,5 +72,29 @@ public class UserDaoTest {
         dao.saveOrUpdate(userToUpdate);
         User retrievedUser = (User)dao.getById(2);
         assertEquals(userToUpdate, retrievedUser);
+    }
+
+    @Test
+    void userExistsSuccess() {
+        String username = "kmracchini";
+        User user = (User) dao.getByPropertyEqualsUnique("userName", username);
+        boolean userExists;
+        if (user != null) {
+            userExists = true;
+        } else {
+            userExists = false;
+        }
+        assertTrue(userExists);
+        System.out.println(user.toString());
+        assertEquals("Kristin Racchini", user.getName());
+    }
+
+    @Test
+    void userFavoritePatternsSuccess() {
+        String username = "kmracchini";
+        User user = (User) dao.getByPropertyEqualsUnique("userName", username);
+        assertEquals("Kristin Racchini", user.getName());
+        Set<Pattern> favorites = user.getFavoritePatterns();
+        assertEquals(2, favorites.size());
     }
 }

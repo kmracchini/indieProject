@@ -6,7 +6,9 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * The type User.
@@ -29,18 +31,26 @@ public class User {
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
+    private boolean isAdmin;
+
+    @ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinTable(name="favorites", joinColumns = {@JoinColumn(name="user_id", referencedColumnName = "id")},
+                                 inverseJoinColumns = {@JoinColumn(name = "pattern_id", referencedColumnName = "id")})
+    private Set<Pattern> favoritePatterns = new HashSet<>();
 
     /**
      * Instantiates a new User.
      *
      * @param name     the name
      * @param email    the email
-     * @param userName the user name
+     * @param userName the username
+     * @param isAdmin if the user is an admin
      */
-    public User(String name, String email, String userName) {
+    public User(String name, String email, String userName, boolean isAdmin) {
         this.name = name;
         this.email = email;
         this.userName = userName;
+        this.isAdmin = isAdmin;
     }
 
     @Override

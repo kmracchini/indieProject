@@ -4,14 +4,14 @@
 <%@include file="header.jsp"%>
 <html>
 <body>
-<c:set var="userName" value="${pageContext.request.getAttribute(userName)}">
+<!--TODO: This doesn't work either! -->
 
 <c:choose>
-  <c:when test="${empty userName}">
+  <c:when test="${empty user.userName}">
     <h2><a href="logIn">You need to log in to view this page.</a></h2>
   </c:when>
   <c:otherwise>
-    <h2>${userName}'s Profile</h2>
+    <h2>${user.userName}'s Profile</h2>
   </c:otherwise>
 </c:choose>
 
