@@ -6,7 +6,6 @@ import com.stitchable.testUtils.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -76,7 +75,7 @@ public class UserDaoTest {
 
     @Test
     void userExistsSuccess() {
-        String username = "kmracchini";
+        String username = "queenofmean";
         User user = (User) dao.getByPropertyEqualsUnique("userName", username);
         boolean userExists;
         if (user != null) {
@@ -86,7 +85,7 @@ public class UserDaoTest {
         }
         assertTrue(userExists);
         System.out.println(user.toString());
-        assertEquals("Kristin Racchini", user.getName());
+        assertEquals("Maleficent Racchini", user.getName());
     }
 
     @Test

@@ -91,4 +91,21 @@ public class PatternDaoTest {
         List<Pattern> patterns = dao.getByLessThan("numberOfColors", 10);
         assertEquals(2, patterns.size());
     }
+
+    @Test
+    void getSizeSuccess() {
+        Pattern pattern1 = (Pattern)dao.getById(1);
+        Pattern pattern2 = (Pattern)dao.getById(2);
+        String patternSize1 = pattern1.getSize();
+        String patternSize2 = pattern2.getSize();
+        assertEquals("medium", patternSize1);
+        assertEquals("small", patternSize2);
+    }
+
+//    @Test
+//    void searchBySizeSuccess() {
+//        List<Pattern> patterns = dao.getByPropertyEquals("size", "medium");
+//        assertEquals(1, patterns.size());
+//
+//    }
 }
