@@ -31,3 +31,6 @@
 |11/20/21 | Getting the Etsy API up and running! Wahoo! Getting shop and listing information back | 3 | 
 |11/22/21 | Implementing project Lombok and adding forwarding to error page for authentication. Working on getting user data from cognito to use on site.  | 2.5
 |11/23/21 | Still fighting with users/authentication. Added a search page and display results. Added queries for greater than and less than (for searching by number of colors in a pattern). | 4
+|11/28/21 | Started message beans exercise, but didn't get super far. Was able to fix authentication issue by being away from it for a few days with a clear head. | 1 |
+|11/30/21 | Finished message beans exercise eventually | 2 |
+|12/3/21 | Worked on favorites (many to many relationship) and getting API working with pulling in shopID from database. Tried to get "getAge()" method working but I can't figure out how to search with it...  | 4

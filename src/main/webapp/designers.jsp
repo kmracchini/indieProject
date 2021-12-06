@@ -14,8 +14,7 @@
             <img class="img-fluid rounded mx-auto d-block" src="images/${designer.logo}" alt="${designer.name} logo"/>
             <div class="card-body">
                 <h2 class="card-title">${designer.name}</h2>
-                <p class="card-text"><a href="${designer.website}" target="_blank">Visit Website</a></p>
-                <p class="card-text"><a href="designerPatterns?id=${designer.id}">View all patterns by ${designer.name}</a></p>
+                <p class="card-text"><a href="designerProfile?id=${designer.id}">View designer profile</a></p>
             </div>
         </div>
     </c:forEach>

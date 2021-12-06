@@ -84,7 +84,6 @@ public class UserDaoTest {
             userExists = false;
         }
         assertTrue(userExists);
-        System.out.println(user.toString());
         assertEquals("Maleficent Racchini", user.getName());
     }
 

@@ -208,8 +208,6 @@ public class Auth extends HttpServlet implements PropertiesLoader {
 
     private boolean verifyUser(String username) {
         log.info("I'm verifying the user! " + username);
-        //TODO: This is where it gets stuck! If they already exist it's fine, otherwise it craps out.
-        //User user = (User) dao.getByPropertyEqualsUnique("userName", username);
 
         boolean userExists;
         if (dao.getByPropertyEqualsUnique("userName", username) != null) {

@@ -13,7 +13,7 @@ import javax.ws.rs.core.MediaType;
 @Log4j2
 public class EtsyShopDao {
 
-    Shop getEtsyResponse(int shopId) {
+    public Shop getEtsyResponse(int shopId) {
         String url = "https://openapi.etsy.com/v2/shops/" + shopId + "?api_key=wtj49aahjtf5wqf7apami7mn";
         Client client = ClientBuilder.newClient();
         WebTarget target = client.target(url);

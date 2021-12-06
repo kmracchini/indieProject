@@ -28,7 +28,7 @@
             <tr>
                 <td>${pattern.designer.name}</td>
                 <td>${pattern.name}</td>
-                <td>${pattern.width} x ${pattern.height}</td>
+                <td>${pattern.size} - ${pattern.width} x ${pattern.height}</td>
                 <td>${pattern.numberOfColors}</td>
                 <td>${pattern.stitchedExample}</td>
                 <td><a href="images/${pattern.image}">Pattern image</a></td>

@@ -31,27 +31,27 @@
 
 ### Week 8
 - [x] Implement security and authentication on website
-- [ ] User sign up and log in JSPs and servlets
+- [x] User sign up and log in JSPs and servlets
 
 
 ### Week 9 - Checkpoint! 
-- [ ] Create homepage, header, footer jsps
-- [ ] Browse pattern JSP and servlet
+- [x] Create homepage, header, footer jsps
+- [x] Browse pattern JSP and servlet
 
 #### Checkpoint items: Deployed to AWS, at least one JSP that displays data from the database is implemented, authentication implemented (log in capability).
 
 ### Week 10
-- [ ] Pattern search JSP and servlet
+- [x] Pattern search JSP and servlet
 - [ ] Restful web service? 
 
 ### Week 11
-- [ ] User favorite JSP and servlet
+- [x] User favorite JSP and servlet
 
 ### Week 12
 - [ ] Work time? 
 
 ### Week 13
-- [ ] Asynchronous messaging? 
+- [x] Asynchronous messaging? 
 
 ### Week 14 - Peer Code Review 
 - [ ] Complete Peer Code Review

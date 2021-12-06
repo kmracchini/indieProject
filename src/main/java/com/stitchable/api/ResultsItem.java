@@ -126,6 +126,13 @@ public class ResultsItem{
 	@JsonProperty("policy_has_private_receipt_info")
 	private boolean policyHasPrivateReceiptInfo;
 
+	@JsonProperty("custom_shops_state")
+	private int customShopsState;
+
+	public int getCustomShopsState() {
+		return customShopsState;
+	}
+
 	public Object getVacationAutoreply(){
 		return vacationAutoreply;
 	}

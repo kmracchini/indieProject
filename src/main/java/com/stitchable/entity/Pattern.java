@@ -26,9 +26,6 @@ public class Pattern {
     private int width;
     private int height;
 
-    @Transient
-    private String size;
-
     @Column(name = "number_of_colors")
     private int numberOfColors;
     private String keywords;
@@ -38,6 +35,8 @@ public class Pattern {
     private String stitchedExample;
     private String image;
     private String url;
+
+    private String size;
 
     @ManyToOne
     private Designer designer;
@@ -72,25 +71,6 @@ public class Pattern {
         this.image = image;
         this.url = url;
         this.designer = designer;
-    }
-
-    @Transient
-    public String getSize() {
-        String patternSize = "";
-
-        if ((width >= 100 && height >= 100) || (width >= 90 && height >= 100) || (height >= 90 && width >= 100)) {
-            patternSize = "large";
-        } else if ((width <= 50 && height <= 50) || (width < 60 && height <=50) || (height < 60 && width <=50)) {
-            patternSize = "small";
-        } else {
-            patternSize = "medium";
-        }
-
-        return patternSize;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
     }
 
     @Override

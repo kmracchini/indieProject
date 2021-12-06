@@ -26,7 +26,7 @@ public class SearchPatterns extends HttpServlet {
         String searchTerm = request.getParameter("searchTerm");
 
         if (request.getParameter("type").equals("size")) {
-            log.info("I'm searching by size!");
+            request.setAttribute("patterns", dao.getByPropertyLike("size", searchTerm));
         } else if (request.getParameter("type").equals("keywords")) {
             request.setAttribute("patterns", dao.getByPropertyLike("keywords", searchTerm));
         } else if (request.getParameter("type").equals("colorsMax")) {
