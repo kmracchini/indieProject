@@ -198,7 +198,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             log.info("the user exists!");
             user = (User) dao.getByPropertyEqualsUnique("userName", userName);
         } else {
-            user = new User(fullName, email, userName, false);
+            user = new User(fullName, email, userName, 0);
             dao.insert(user);
             log.info("Just added a newbie to the database! " + userName);
         }

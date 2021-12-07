@@ -12,6 +12,14 @@
         <li class="nav-item mx-2"><a class="nav-link" href="profile.jsp">Your Profile</a></li>
       </c:otherwise>
     </c:choose>
+    <c:choose>
+      <c:when test="${user.isAdmin == 1}">
+        <li class="nav-item mx-2"><a class="nav-link" href="admin">Administration</a></li>
+      </c:when>
+      <c:otherwise>
+
+      </c:otherwise>
+    </c:choose>
 
 
   </ul>

@@ -7,30 +7,30 @@
 <body>
 <div class="container-fluid">
     <h2>Add/Edit Pattern</h2>
-    <form id="editPatternForm" method="post" action="">
+    <form id="editPatternForm" method="post" action="editPattern">
         <input type="hidden" id="id" name="id" value="${pattern.id}">
 
         <div class="form-group">
             <label for="name">Pattern name:</label>
-            <input type="text" id="name" name="name">
+            <input type="text" id="name" name="name" value="${pattern.name}">
         </div>
 
         <div class="form-group">
             <label for="width">Pattern width:</label>
-            <input type="number" id="width" name="width">
+            <input type="number" id="width" name="width" value="${pattern.width}">
 
             <label for="height">Pattern height:</label>
-            <input type="number" id="height" name="height">
+            <input type="number" id="height" name="height" value="${pattern.height}">
         </div>
 
         <div class="form-group">
             <label for="number">Number of colors:</label>
-            <input type="number" id="number" name="number">
+            <input type="number" id="number" name="number" value="${pattern.numberOfColors}">
         </div>
 
         <div class="form-group">
             <label for="number">Keywords:</label>
-            <input type="text" id="keywords" name="keywords">
+            <input type="text" id="keywords" name="keywords" value="${pattern.keywords}">
         </div>
 
         <div class="form-group">
@@ -54,12 +54,12 @@
 
         <div class="form-group">
             <label for="image">Image file name:</label>
-            <input type="text" id="image" name="image">
+            <input type="text" id="image" name="image" value="${pattern.image}">
         </div>
 
         <div class="form-group">
             <label for="url">Pattern URL</label>
-            <input type="text" id="url" name="url">
+            <input type="text" id="url" name="url" value="${pattern.url}">
         </div>
 
         <div class="form-group">

@@ -1,10 +1,9 @@
 package com.stitchable.controller;
 
+import com.stitchable.entity.Designer;
 import com.stitchable.entity.Pattern;
 import com.stitchable.persistence.GenericDao;
 import lombok.extern.log4j.Log4j2;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -41,6 +40,9 @@ public class EditPattern extends HttpServlet {
         GenericDao dao = new GenericDao(Pattern.class);
         int id = Integer.valueOf(request.getParameter("id"));
         request.setAttribute("pattern", dao.getById(id));
+
+        GenericDao designerDao = new GenericDao(Designer.class);
+        request.setAttribute("designers", designerDao.getAll());
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/editPattern.jsp");
         dispatcher.forward(request, response);

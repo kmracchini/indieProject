@@ -31,7 +31,7 @@ public class User {
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
-    private boolean isAdmin;
+    private int isAdmin;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
     @JoinTable(name="favorites", joinColumns = {@JoinColumn(name="user_id", referencedColumnName = "id")},
@@ -46,7 +46,7 @@ public class User {
      * @param userName the username
      * @param isAdmin if the user is an admin
      */
-    public User(String name, String email, String userName, boolean isAdmin) {
+    public User(String name, String email, String userName, int isAdmin) {
         this.name = name;
         this.email = email;
         this.userName = userName;

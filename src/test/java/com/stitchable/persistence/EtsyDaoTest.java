@@ -21,11 +21,12 @@ public class EtsyDaoTest {
         int shopCode = designer.getEtsyId();
         Shop shop = dao.getEtsyResponse(shopCode);
         List<ResultsItem> items = shop.getResults();
-        for (ResultsItem item : items) {
-            log.info("Shop name: " + item.getShopName());
-            log.info("Shop url: " + item.getUrl());
-            log.info("Shop image: " + item.getImageUrl760x100());
-        }
+        assertNotNull(shop);
+//        for (ResultsItem item : items) {
+//            log.info("Shop name: " + item.getShopName());
+//            log.info("Shop url: " + item.getUrl());
+//            log.info("Shop image: " + item.getImageUrl760x100());
+//        }
     }
 
 }
