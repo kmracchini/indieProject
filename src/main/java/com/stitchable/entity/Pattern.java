@@ -1,5 +1,6 @@
 package com.stitchable.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
@@ -13,6 +14,7 @@ import java.util.Set;
  */
 @NoArgsConstructor
 @Data
+@AllArgsConstructor
 @Entity(name="Pattern")
 @Table(name="pattern")
 public class Pattern {
@@ -44,23 +46,8 @@ public class Pattern {
     @ManyToMany(mappedBy = "favoritePatterns")
     private Set<User> users;
 
-
-    /**
-     * Instantiates a new Pattern.
-     *
-     * @param name            the name
-     * @param width           the width
-     * @param height          the height
-     * @param numberOfColors  the number of colors
-     * @param keywords        the keywords
-     * @param features        the features
-     * @param stitchedExample the stitched example
-     * @param image           the image
-     * @param url             the url
-     * @param designer        the designer
-     */
-    public Pattern(String name, int width, int height, int numberOfColors, String keywords, String features,
-                   String stitchedExample, String image, String url, Designer designer) {
+    public Pattern(int id, String name, int width, int height, int numberOfColors, String keywords, String features, String stitchedExample, String image, String url, String size, Designer designer) {
+        this.id = id;
         this.name = name;
         this.width = width;
         this.height = height;
@@ -70,6 +57,21 @@ public class Pattern {
         this.stitchedExample = stitchedExample;
         this.image = image;
         this.url = url;
+        this.size = size;
+        this.designer = designer;
+    }
+
+    public Pattern(String name, int width, int height, int numberOfColors, String keywords, String features, String stitchedExample, String image, String url, String size, Designer designer) {
+        this.name = name;
+        this.width = width;
+        this.height = height;
+        this.numberOfColors = numberOfColors;
+        this.keywords = keywords;
+        this.features = features;
+        this.stitchedExample = stitchedExample;
+        this.image = image;
+        this.url = url;
+        this.size = size;
         this.designer = designer;
     }
 

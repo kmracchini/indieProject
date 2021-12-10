@@ -57,7 +57,7 @@ public class PatternDaoTest {
         GenericDao designerDao = new GenericDao(Designer.class);
         Designer designer = (Designer)designerDao.getById(1);
         Pattern newPattern = new Pattern("Test Pattern", 50, 50, 2, "cool",
-                "Full Stitches Only", "No", "test.jpg", "http://www.google.com", designer);
+                "Full Stitches Only", "No", "test.jpg", "http://www.google.com", "Small", designer);
         int id = dao.insert(newPattern);
         assertNotEquals(0,id);
         Pattern insertedPattern = (Pattern)dao.getById(id);

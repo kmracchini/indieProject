@@ -35,7 +35,7 @@
                         <td>${designer.id}</td>
                         <td>${designer.name}</td>
                         <td>${designer.website}</td>
-                        <td></td>
+                        <td>Edit / Delete</td>
                     </tr>
                 </c:forEach>
                 </tbody>
@@ -43,6 +43,7 @@
 
 
             <h3>Patterns</h3>
+            <a class="btn btn-primary" href="addPattern">Add New Pattern</a>
             <table id="patternTable" class="display">
                 <thead>
                 <tr>
@@ -62,7 +63,7 @@
                         <td>${pattern.name}</td>
                         <td><a href="images/${pattern.image}">Pattern image</a></td>
                         <td><a href="${pattern.url}">Link to pattern</a></td>
-                        <td></td>
+                        <td><a href="editPattern?id=${pattern.id}">Edit</a> / Delete</td>
                     </tr>
                 </c:forEach>
                 </tbody>
