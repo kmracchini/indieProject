@@ -1,8 +1,8 @@
 package com.stitchable.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -14,7 +14,6 @@ import java.util.Set;
  */
 @NoArgsConstructor
 @Data
-@AllArgsConstructor
 @Entity(name="Pattern")
 @Table(name="pattern")
 public class Pattern {
@@ -38,15 +37,16 @@ public class Pattern {
     private String image;
     private String url;
 
-    private String size;
-
     @ManyToOne
     private Designer designer;
 
+    private String size;
+
     @ManyToMany(mappedBy = "favoritePatterns")
+    @ToString.Exclude
     private Set<User> users;
 
-    public Pattern(int id, String name, int width, int height, int numberOfColors, String keywords, String features, String stitchedExample, String image, String url, String size, Designer designer) {
+    public Pattern(int id, String name, int width, int height, int numberOfColors, String keywords, String features, String stitchedExample, String image, String url, Designer designer, String size) {
         this.id = id;
         this.name = name;
         this.width = width;
@@ -57,11 +57,11 @@ public class Pattern {
         this.stitchedExample = stitchedExample;
         this.image = image;
         this.url = url;
-        this.size = size;
         this.designer = designer;
+        this.size = size;
     }
 
-    public Pattern(String name, int width, int height, int numberOfColors, String keywords, String features, String stitchedExample, String image, String url, String size, Designer designer) {
+    public Pattern(String name, int width, int height, int numberOfColors, String keywords, String features, String stitchedExample, String image, String url, Designer designer, String size) {
         this.name = name;
         this.width = width;
         this.height = height;
@@ -71,8 +71,8 @@ public class Pattern {
         this.stitchedExample = stitchedExample;
         this.image = image;
         this.url = url;
-        this.size = size;
         this.designer = designer;
+        this.size = size;
     }
 
     @Override

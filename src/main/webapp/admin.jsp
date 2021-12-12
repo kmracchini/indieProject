@@ -63,7 +63,7 @@
                         <td>${pattern.name}</td>
                         <td><a href="images/${pattern.image}">Pattern image</a></td>
                         <td><a href="${pattern.url}">Link to pattern</a></td>
-                        <td><a href="editPattern?id=${pattern.id}">Edit</a> / Delete</td>
+                        <td><a href="editPattern?id=${pattern.id}">Edit</a> / <a href="deletePattern?id=${pattern.id}">Delete</a></td>
                     </tr>
                 </c:forEach>
                 </tbody>

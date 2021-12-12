@@ -35,18 +35,17 @@ public class EditPattern extends HttpServlet {
         String imageURL = request.getParameter("image");
         String patternURL = request.getParameter("url");
         int designerID = Integer.valueOf(request.getParameter("designer"));
+        log.info("The designer id is " + designerID);
         Designer designer = (Designer)designerDao.getById(designerID);
+        log.info("The designer is " + designer.getName());
 
-        //TODO : fix this
         if (request.getParameter("id") == "") {
-            log.info("I made it!");
-            Pattern newPattern = new Pattern(patternName, patternWidth, patternHeight, numberOfColors, keywords, features, stitchedExample, imageURL, patternURL, patternSize, designer);
-            log.info(newPattern.toString());
-            int patternId = dao.insert(newPattern);
-            log.info("Added pattern " + newPattern + " with id of " + patternId);
+            Pattern newPattern = new Pattern(patternName, patternWidth, patternHeight, numberOfColors, keywords, features, stitchedExample, imageURL, patternURL, designer, patternSize);
+            dao.insert(newPattern);
+            log.info("Added pattern " + newPattern);
         } else {
             int id = Integer.valueOf(request.getParameter("id"));
-            Pattern pattern = new Pattern(id, patternName, patternWidth, patternHeight, numberOfColors, keywords, features, stitchedExample, imageURL, patternURL, patternSize, designer);
+            Pattern pattern = new Pattern(id, patternName, patternWidth, patternHeight, numberOfColors, keywords, features, stitchedExample, imageURL, patternURL, designer, patternSize);
             dao.saveOrUpdate(pattern);
             log.info("Updated pattern " + patternName);
         }

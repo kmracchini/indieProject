@@ -124,13 +124,11 @@ public class Auth extends HttpServlet implements PropertiesLoader {
 
         response = client.send(authRequest, HttpResponse.BodyHandlers.ofString());
 
-
-        log.debug("Response headers: " + response.headers().toString());
-        log.debug("Response body: " + response.body().toString());
+//        log.debug("Response headers: " + response.headers().toString());
+//        log.debug("Response body: " + response.body().toString());
 
         ObjectMapper mapper = new ObjectMapper();
         TokenResponse tokenResponse = mapper.readValue(response.body().toString(), TokenResponse.class);
-        log.debug("Id token: " + tokenResponse.getIdToken());
 
         return tokenResponse;
 
@@ -185,17 +183,12 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         String userName = jwt.getClaim("cognito:username").asString();
         String fullName = jwt.getClaim("name").asString();
         String email = jwt.getClaim("email").asString();
-        log.debug("here's the username: " + userName);
-        log.debug("here's the name: " + fullName);
-        log.debug("here's the email: " + email);
 
         boolean userExists = verifyUser(userName);
-        log.info("Here's the userexists boolean: " + userExists);
 
         User user;
 
         if (userExists) {
-            log.info("the user exists!");
             user = (User) dao.getByPropertyEqualsUnique("userName", userName);
         } else {
             user = new User(fullName, email, userName, 0);
@@ -207,15 +200,12 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     }
 
     private boolean verifyUser(String username) {
-        log.info("I'm verifying the user! " + username);
-
         boolean userExists;
         if (dao.getByPropertyEqualsUnique("userName", username) != null) {
             userExists = true;
         } else {
             userExists = false;
         }
-        log.info("True or false- the user exists! : " + userExists);
         return userExists;
     }
 

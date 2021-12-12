@@ -30,6 +30,7 @@ public class Designer {
     private int etsyId;
 
     @OneToMany(mappedBy = "designer", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @ToString.Exclude
     private Set<Pattern> patterns = new HashSet<>();
 
     /**

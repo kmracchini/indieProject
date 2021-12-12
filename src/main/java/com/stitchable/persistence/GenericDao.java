@@ -1,6 +1,7 @@
 package com.stitchable.persistence;
 
 import com.stitchable.entity.SessionFactoryProvider;
+import lombok.extern.log4j.Log4j2;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
@@ -13,6 +14,7 @@ import javax.persistence.criteria.Expression;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
+@Log4j2
 public class GenericDao<T> {
 
     private Class<T> type;
