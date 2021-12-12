@@ -5,6 +5,8 @@
 
 <html>
 <body>
+<c:choose>
+<c:when test="${user.isAdmin == 1}">
 <h2>Delete a Designer</h2>
 <p>Are you sure you want to delete the following designer? This will cause all patterns by this designer to be deleted also.  </p>
 <ul>
@@ -18,7 +20,12 @@
     <input type="hidden" id="id" name="id" value="${pattern.id}">
     <input type="submit" value="Yes, delete it!">
 </form>
-
+</c:when>
+    <c:otherwise>
+        <h2>You must be an admin to view this page.</h2>
+        <p><a href="index.jsp">Go back!</a></p>
+    </c:otherwise>
+</c:choose>
 
 </body>
 </html>

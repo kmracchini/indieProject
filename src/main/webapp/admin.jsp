@@ -71,7 +71,8 @@
             </table>
         </c:when>
         <c:otherwise>
-            <h2><a href="logIn">You need to log in to view this page.</a></h2>
+            <h2>You must be an admin to view this page.</h2>
+            <p><a href="index.jsp">Go back!</a></p>
         </c:otherwise>
     </c:choose>
 </div>

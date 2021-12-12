@@ -5,6 +5,8 @@
 
 <html>
 <body>
+<c:choose>
+<c:when test="${user.isAdmin == 1}">
 <div class="container-fluid">
   <h2>Add/Edit Designer</h2>
   <form id="editDesignerForm" method="post" action="editDesigner">
@@ -34,6 +36,12 @@
     <button type="submit">Add / Update</button>
     <button type="reset">Clear</button>
   </form>
+  </c:when>
+  <c:otherwise>
+    <h2>You must be an admin to view this page.</h2>
+    <p><a href="index.jsp">Go back!</a></p>
+  </c:otherwise>
+  </c:choose>
 </div>
 </body>
 </html>

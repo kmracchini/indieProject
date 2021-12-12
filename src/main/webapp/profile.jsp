@@ -2,6 +2,11 @@
 <c:set var="title" value="Your profile" />
 <%@include file="head.jsp"%>
 <%@include file="header.jsp"%>
+<script type="text/javascript" class="init">
+  $(document).ready( function () {
+    $('#favorites').DataTable();
+  } );
+</script>
 <html>
 <body>
 <!--TODO: This needs to be snazzed up! -->
@@ -13,8 +18,16 @@
   <c:otherwise>
     <h2>${user.name}'s Profile</h2>
 
+    <!--TODO: have a think about this part ... -->
+    <form method="post" action="updateUser">
+      <input type="hidden" id="id" name="id" value="${user.id}">
+      <label for="name">Your display name:</label>
+      <input type="text" id="name" name="name" value="${user.name}">
+      <input type="submit" value="Update this information">
+    </form>
+
     <h3>Favorite Patterns</h3>
-    <table id="patternTable" class="display">
+    <table id="favorites" class="display">
       <thead>
       <th>Name</th>
       <th>Size (WxH)</th>
@@ -22,6 +35,7 @@
       <th>Stitched Example</th>
       <th>Image</th>
       <th>Link</th>
+      <th>Remove</th>
       </thead>
       <tbody>
       <c:forEach var="pattern" items="${user.favoritePatterns}">
@@ -32,6 +46,7 @@
           <td>${pattern.stitchedExample}</td>
           <td><a href="images/${pattern.image}">Pattern image</a></td>
           <td><a href="${pattern.url}">Link to pattern</a></td>
+          <td>Remove from favorites</td>
         </tr>
       </c:forEach>
       </tbody>

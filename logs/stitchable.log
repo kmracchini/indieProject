@@ -1278,3 +1278,10 @@ com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized f
 [DEBUG] 2021-12-11 23:31:04.454 [http-nio-8080-exec-4] Auth - Keys are loaded. Here's e: AQAB
 [INFO ] 2021-12-11 23:31:21.708 [http-nio-8080-exec-9] EditDesigner - Updated designer New designer
 [INFO ] 2021-12-11 23:31:34.284 [http-nio-8080-exec-2] DeleteDesigner - Designer New designer deleted
+[DEBUG] 2021-12-11 23:37:50.322 [http-nio-8080-exec-10] Auth - Keys are loaded. Here's e: AQAB
+[DEBUG] 2021-12-11 23:40:37.609 [http-nio-8080-exec-4] Auth - Keys are loaded. Here's e: AQAB
+[DEBUG] 2021-12-11 23:48:56.754 [http-nio-8080-exec-4] Auth - Keys are loaded. Here's e: AQAB
+[DEBUG] 2021-12-11 23:50:48.734 [http-nio-8080-exec-5] Auth - Keys are loaded. Here's e: AQAB
+[INFO ] 2021-12-11 23:51:04.687 [http-nio-8080-exec-8] UpdateUser - Updated user with new name Kristin Racchininini
+[INFO ] 2021-12-11 23:51:48.948 [http-nio-8080-exec-3] UpdateUser - Updated user with new name Kristin Racchini
+[INFO ] 2021-12-11 23:51:54.787 [http-nio-8080-exec-4] UpdateUser - Updated user with new name Kristin
