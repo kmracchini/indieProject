@@ -18,14 +18,6 @@
   <c:otherwise>
     <h2>${user.name}'s Profile</h2>
 
-    <!--TODO: have a think about this part ... -->
-    <form method="post" action="updateUser">
-      <input type="hidden" id="id" name="id" value="${user.id}">
-      <label for="name">Your display name:</label>
-      <input type="text" id="name" name="name" value="${user.name}">
-      <input type="submit" value="Update this information">
-    </form>
-
     <h3>Favorite Patterns</h3>
     <table id="favorites" class="display">
       <thead>
