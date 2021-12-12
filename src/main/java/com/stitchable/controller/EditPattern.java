@@ -42,7 +42,7 @@ public class EditPattern extends HttpServlet {
         if (request.getParameter("id") == "") {
             Pattern newPattern = new Pattern(patternName, patternWidth, patternHeight, numberOfColors, keywords, features, stitchedExample, imageURL, patternURL, designer, patternSize);
             dao.insert(newPattern);
-            log.info("Added pattern " + newPattern);
+            log.info("Added pattern " + patternName);
         } else {
             int id = Integer.valueOf(request.getParameter("id"));
             Pattern pattern = new Pattern(id, patternName, patternWidth, patternHeight, numberOfColors, keywords, features, stitchedExample, imageURL, patternURL, designer, patternSize);

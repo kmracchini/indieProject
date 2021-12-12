@@ -72,6 +72,13 @@ public class Designer {
         this.etsyId = etsyId;
     }
 
+    public Designer(int id, String name, String website, String logo, int etsyId) {
+        this.id = id;
+        this.name = name;
+        this.website = website;
+        this.logo = logo;
+        this.etsyId = etsyId;
+    }
 
     /**
      * Gets patterns.

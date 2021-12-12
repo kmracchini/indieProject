@@ -20,6 +20,7 @@
             <h2>Welcome, admin! </h2>
 
             <h3>Designers</h3>
+            <a class="btn btn-primary" href="editDesigner.jsp">Add New Designer</a>
             <table id="designerTable" class="display">
                 <thead>
                 <tr>
@@ -35,7 +36,7 @@
                         <td>${designer.id}</td>
                         <td>${designer.name}</td>
                         <td>${designer.website}</td>
-                        <td>Edit / Delete</td>
+                        <td><a href="editDesigner?id=${designer.id}">Edit</a> / <a href="deleteDesigner?id=${designer.id}">Delete</a></td>
                     </tr>
                 </c:forEach>
                 </tbody>

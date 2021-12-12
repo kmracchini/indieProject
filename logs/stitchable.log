@@ -1270,3 +1270,11 @@ com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized f
 [INFO ] 2021-12-11 21:39:52.456 [http-nio-8080-exec-6] Auth - the user exists!
 [INFO ] 2021-12-11 21:40:06.698 [http-nio-8080-exec-10] DeletePattern - Pattern Test pattern deleted
 [INFO ] 2021-12-11 21:49:17.876 [main] EtsyShopDao - https://openapi.etsy.com/v2/shops/5460739?api_key=wtj49aahjtf5wqf7apami7mn
+[DEBUG] 2021-12-11 23:20:34.076 [http-nio-8080-exec-4] Auth - Keys are loaded. Here's e: AQAB
+[INFO ] 2021-12-11 23:20:59.500 [http-nio-8080-exec-8] EditDesigner - Updated designer The Witchy Stitcher
+[DEBUG] 2021-12-11 23:24:50.237 [http-nio-8080-exec-3] Auth - Keys are loaded. Here's e: AQAB
+[INFO ] 2021-12-11 23:25:17.795 [http-nio-8080-exec-8] EditDesigner - Added designer New designer
+[INFO ] 2021-12-11 23:25:38.643 [http-nio-8080-exec-10] EditDesigner - Updated designer New designer
+[DEBUG] 2021-12-11 23:31:04.454 [http-nio-8080-exec-4] Auth - Keys are loaded. Here's e: AQAB
+[INFO ] 2021-12-11 23:31:21.708 [http-nio-8080-exec-9] EditDesigner - Updated designer New designer
+[INFO ] 2021-12-11 23:31:34.284 [http-nio-8080-exec-2] DeleteDesigner - Designer New designer deleted
