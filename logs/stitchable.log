@@ -1269,3 +1269,4 @@ com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized f
 [INFO ] 2021-12-11 21:39:52.456 [http-nio-8080-exec-6] Auth - Here's the userexists boolean: true
 [INFO ] 2021-12-11 21:39:52.456 [http-nio-8080-exec-6] Auth - the user exists!
 [INFO ] 2021-12-11 21:40:06.698 [http-nio-8080-exec-10] DeletePattern - Pattern Test pattern deleted
+[INFO ] 2021-12-11 21:49:17.876 [main] EtsyShopDao - https://openapi.etsy.com/v2/shops/5460739?api_key=wtj49aahjtf5wqf7apami7mn

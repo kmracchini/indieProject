@@ -9,12 +9,20 @@ import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
+import java.io.IOException;
+import java.util.Properties;
 
 @Log4j2
 public class EtsyShopDao {
 
+    private static final String ETSY_PROPERTIES = "/etsyapi.properties";
+    private Properties properties;
+
     public Shop getEtsyResponse(int shopId) {
-        String url = "https://openapi.etsy.com/v2/shops/" + shopId + "?api_key=wtj49aahjtf5wqf7apami7mn";
+        loadProperties();
+        String website = properties.getProperty("url");
+        String apiKey = properties.getProperty("key");
+        String url = website + shopId + apiKey;
         Client client = ClientBuilder.newClient();
         WebTarget target = client.target(url);
         String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
@@ -30,6 +38,18 @@ public class EtsyShopDao {
             log.error("Exception: " + e);
         }
         return etsyShop;
+    }
+
+    private void loadProperties() {
+        properties = new Properties();
+        try {
+            properties.load (this.getClass().getResourceAsStream(ETSY_PROPERTIES));
+        } catch (IOException ioe) {
+            log.error("Database.loadProperties()...Cannot load the properties file", ioe);
+        } catch (Exception e) {
+            log.error("Database.loadProperties()...", e);
+        }
+
     }
 
 
