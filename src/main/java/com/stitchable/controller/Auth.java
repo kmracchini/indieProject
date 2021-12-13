@@ -49,7 +49,7 @@ import java.util.stream.Collectors;
 @WebServlet(
         urlPatterns = {"/auth"}
 )
-// TODO if something goes wrong it this process, route to an error page. Currently, errors are only caught and logged.
+
 /**
  * Inspired by: https://stackoverflow.com/questions/52144721/how-to-get-access-token-using-client-credentials-using-java-code
  */
@@ -254,7 +254,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             File jwksFile = new File("jwks.json");
             FileUtils.copyURLToFile(jwksURL, jwksFile);
             jwks = mapper.readValue(jwksFile, Keys.class);
-            log.debug("Keys are loaded. Here's e: " + jwks.getKeys().get(0).getE());
+            //log.debug("Keys are loaded. Here's e: " + jwks.getKeys().get(0).getE());
         } catch (IOException ioException) {
             log.error("Cannot load json..." + ioException.getMessage(), ioException);
         } catch (Exception e) {
@@ -266,7 +266,6 @@ public class Auth extends HttpServlet implements PropertiesLoader {
      * Read in the cognito props file and get/set the client id, secret, and required urls
      * for authenticating a user.
      */
-    // TODO This code appears in a couple classes, consider using a startup servlet similar to adv java project
     private void loadProperties() {
         try {
             properties = loadProperties("/cognito.properties");

@@ -42,7 +42,7 @@ public class Pattern {
 
     private String size;
 
-    @ManyToMany(mappedBy = "favoritePatterns")
+    @ManyToMany(mappedBy = "favoritePatterns", fetch = FetchType.EAGER)
     @ToString.Exclude
     private Set<User> users;
 

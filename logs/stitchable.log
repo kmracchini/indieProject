@@ -1285,3 +1285,31 @@ com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized f
 [INFO ] 2021-12-11 23:51:04.687 [http-nio-8080-exec-8] UpdateUser - Updated user with new name Kristin Racchininini
 [INFO ] 2021-12-11 23:51:48.948 [http-nio-8080-exec-3] UpdateUser - Updated user with new name Kristin Racchini
 [INFO ] 2021-12-11 23:51:54.787 [http-nio-8080-exec-4] UpdateUser - Updated user with new name Kristin
+[INFO ] 2021-12-12 16:33:59.536 [main] UserDaoTest - Just added Blood Moon to Kristin Racchini's favorites
+[INFO ] 2021-12-12 16:50:00.173 [main] UserDaoTest - Just added Blood Moon to Kristin Racchini's favorites
+[DEBUG] 2021-12-12 16:50:43.733 [http-nio-8080-exec-6] Auth - Keys are loaded. Here's e: AQAB
+[INFO ] 2021-12-12 16:59:53.621 [main] UserDaoTest - Just added Blood Moon to Kristin Racchini's favorites
+[DEBUG] 2021-12-12 17:01:03.866 [http-nio-8080-exec-5] Auth - Keys are loaded. Here's e: AQAB
+[INFO ] 2021-12-12 17:02:59.334 [main] UserDaoTest - Just added Blood Moon to Kristin Racchini's favorites
+[DEBUG] 2021-12-12 17:04:29.116 [http-nio-8080-exec-9] Auth - Keys are loaded. Here's e: AQAB
+[INFO ] 2021-12-12 17:09:41.447 [main] UserDaoTest - Just added Blood Moon to Kristin Racchini's favorites
+[DEBUG] 2021-12-12 17:10:32.696 [http-nio-8080-exec-7] Auth - Keys are loaded. Here's e: AQAB
+[INFO ] 2021-12-12 17:12:21.133 [main] UserDaoTest - Just added Blood Moon to Kristin Racchini's favorites
+[DEBUG] 2021-12-12 17:13:22.359 [http-nio-8080-exec-7] Auth - Keys are loaded. Here's e: AQAB
+[INFO ] 2021-12-12 17:21:13.274 [main] UserDaoTest - Just added Blood Moon to Kristin Racchini's favorites
+[DEBUG] 2021-12-12 17:21:47.185 [http-nio-8080-exec-4] Auth - Keys are loaded. Here's e: AQAB
+[INFO ] 2021-12-12 17:28:21.379 [main] UserDaoTest - Just added Blood Moon to Kristin Racchini's favorites
+[DEBUG] 2021-12-12 17:29:05.181 [http-nio-8080-exec-4] Auth - Keys are loaded. Here's e: AQAB
+[INFO ] 2021-12-12 17:29:34.956 [http-nio-8080-exec-6] LogOut - User successfully logged out
+[INFO ] 2021-12-12 17:30:46.165 [main] UserDaoTest - Just added Blood Moon to Kristin Racchini's favorites
+[INFO ] 2021-12-12 17:31:44.234 [http-nio-8080-exec-6] LogOut - User successfully logged out
+[INFO ] 2021-12-12 17:44:55.292 [main] UserDaoTest - Just added Blood Moon to Kristin Racchini's favorites
+[INFO ] 2021-12-12 17:46:18.699 [http-nio-8080-exec-2] LogOut - User successfully logged out
+[INFO ] 2021-12-12 17:48:38.086 [main] UserDaoTest - Just added Blood Moon to Kristin Racchini's favorites
+[INFO ] 2021-12-12 17:50:59.949 [main] UserDaoTest - Just added Blood Moon to Kristin Racchini's favorites
+[INFO ] 2021-12-12 17:54:03.559 [main] UserDaoTest - Just added Blood Moon to Kristin Racchini's favorites
+[INFO ] 2021-12-12 17:58:06.897 [main] UserDaoTest - Just added Blood Moon to Kristin Racchini's favorites
+[INFO ] 2021-12-12 18:23:08.380 [main] UserDaoTest - Just added Blood Moon to Kristin Racchini's favorites
+[INFO ] 2021-12-12 18:24:49.752 [http-nio-8080-exec-1] LogOut - User successfully logged out
+[INFO ] 2021-12-12 18:28:46.389 [main] UserDaoTest - Just added Blood Moon to Kristin Racchini's favorites
+[INFO ] 2021-12-12 18:29:40.479 [main] UserDaoTest - Just added Blood Moon to Kristin Racchini's favorites

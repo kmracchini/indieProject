@@ -10,6 +10,7 @@
       </c:when>
       <c:otherwise>
         <li class="nav-item mx-2"><a class="nav-link" href="profile.jsp">Your Profile</a></li>
+        <li class="nav-item mx-2"><a class="nav-link" href="logOut">Log Out</a></li>
       </c:otherwise>
     </c:choose>
     <c:choose>

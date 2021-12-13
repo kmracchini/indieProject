@@ -21,6 +21,7 @@
     <h3>Favorite Patterns</h3>
     <table id="favorites" class="display">
       <thead>
+      <th>Designer</th>
       <th>Name</th>
       <th>Size (WxH)</th>
       <th>Number of Colors</th>
@@ -32,13 +33,14 @@
       <tbody>
       <c:forEach var="pattern" items="${user.favoritePatterns}">
         <tr>
+          <td>${pattern.designer.name}</td>
           <td>${pattern.name}</td>
           <td>${pattern.width} x ${pattern.height}</td>
           <td>${pattern.numberOfColors}</td>
           <td>${pattern.stitchedExample}</td>
           <td><a href="images/${pattern.image}">Pattern image</a></td>
           <td><a href="${pattern.url}">Link to pattern</a></td>
-          <td>Remove from favorites</td>
+          <td><a href="removeFavorite?id=${pattern.id}">Remove from favorites</a></td>
         </tr>
       </c:forEach>
       </tbody>

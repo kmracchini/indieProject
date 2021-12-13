@@ -1,6 +1,7 @@
 package com.stitchable.entity;
 
 
+import com.stitchable.persistence.GenericDao;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
@@ -51,6 +52,16 @@ public class User {
         this.email = email;
         this.userName = userName;
         this.isAdmin = isAdmin;
+    }
+
+    public void addFavorite(Pattern pattern) {
+        favoritePatterns.add(pattern);
+        pattern.getUsers().add(this);
+    }
+
+    public void removeFavorite(Pattern pattern) {
+        favoritePatterns.remove(pattern);
+        pattern.getUsers().remove(this);
     }
 
     @Override

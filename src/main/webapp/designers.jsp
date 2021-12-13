@@ -10,7 +10,7 @@
 <div class="row p-3">
 
     <c:forEach var="designer" items="${designers}">
-        <div class="card text-center col-6 col-md-4 col-lg-3 p-3 m-3">
+        <div class="card text-center col-6 col-md-3 p-3 m-3">
             <img class="img-fluid rounded mx-auto d-block" src="images/${designer.logo}" alt="${designer.name} logo"/>
             <div class="card-body">
                 <h2 class="card-title">${designer.name}</h2>

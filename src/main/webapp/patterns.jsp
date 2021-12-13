@@ -22,6 +22,10 @@
     <th>Stitched Example</th>
     <th>Image</th>
     <th>Link</th>
+    <c:if test="${user.userName != null}">
+        <th>Favorite</th>
+    </c:if>
+
     </thead>
     <tbody>
         <c:forEach var="pattern" items="${patterns}">
@@ -33,6 +37,12 @@
                 <td>${pattern.stitchedExample}</td>
                 <td><a href="images/${pattern.image}">Pattern image</a></td>
                 <td><a href="${pattern.url}">Link to pattern</a></td>
+                <c:if test="${user.userName != null}">
+                    <td><a href="addFavorite?id=${pattern.id}">Add to Favorites</a></td>
+                </c:if>
+
+
+
             </tr>
         </c:forEach>
     </tbody>

@@ -3,6 +3,7 @@ package com.stitchable.persistence;
 import com.stitchable.entity.Pattern;
 import com.stitchable.entity.User;
 import com.stitchable.testUtils.Database;
+import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,6 +12,7 @@ import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Log4j2
 public class UserDaoTest {
 
     GenericDao dao;
@@ -92,6 +94,17 @@ public class UserDaoTest {
         String username = "kmracchini";
         User user = (User) dao.getByPropertyEqualsUnique("userName", username);
         assertEquals("Kristin Racchini", user.getName());
+        Set<Pattern> favorites = user.getFavoritePatterns();
+        assertEquals(1, favorites.size());
+    }
+
+    @Test
+    void addFavoriteSuccess() {
+        GenericDao patternDao = new GenericDao(Pattern.class);
+        Pattern pattern = (Pattern)patternDao.getById(1);
+        User user = (User)dao.getById(1);
+        user.addFavorite(pattern);
+        log.info("Just added " + pattern.getName() + " to " + user.getName() + "'s favorites");
         Set<Pattern> favorites = user.getFavoritePatterns();
         assertEquals(2, favorites.size());
     }
