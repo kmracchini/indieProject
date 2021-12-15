@@ -46,6 +46,9 @@ import java.util.Properties;
 import java.util.stream.Collectors;
 
 
+/**
+ * The type Auth.
+ */
 @WebServlet(
         urlPatterns = {"/auth"}
 )
@@ -197,6 +200,11 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         return user;
     }
 
+    /**
+     * Verifies if the user exists in the database or not
+     * @param username user's username
+     * @return boolean representing if user exists in database
+     */
     private boolean verifyUser(String username) {
         boolean userExists;
         if (dao.getByPropertyEqualsUnique("userName", username) != null) {

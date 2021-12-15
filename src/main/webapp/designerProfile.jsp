@@ -14,7 +14,7 @@
 <body>
 <div class="container-fluid">
     <div class="mx-5">
-        <h2>Designer Profile - ${designer.name}</h2>
+        <h2 class="mt-3">Designer Profile - ${designer.name}</h2>
         <p><a href="${designer.website}">Designer's Website</a></p>
         <div class="clearfix">
             <img src="${icon}" class="float-left w-25 mx-3 px-3" alt="${designer.name}'s etsy shop icon"/>
@@ -51,12 +51,7 @@
                 </tbody>
             </table>
         </div>
-
     </div>
-
-
-
-
 </div>
 </body>
 </html>

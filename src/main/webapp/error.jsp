@@ -5,8 +5,13 @@
 <%@include file="header.jsp"%>
 <html>
 <body>
-<h2>Sorry about that! We've got an error.</h2>
-<p><a href="index.jsp">Want to try that again?</a></p>
+<div class="container-fluid">
+    <div class="mx-5">
+        <h2>Sorry about that! We've got an error.</h2>
+        <p><a href="index.jsp">Want to try that again?</a></p>
+    </div>
+</div>
+
 
 
 
