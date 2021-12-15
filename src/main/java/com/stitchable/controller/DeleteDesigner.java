@@ -25,7 +25,7 @@ public class DeleteDesigner extends HttpServlet {
         Designer designer = (Designer)dao.getById(id);
         request.setAttribute("designer", designer);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/deletePattern.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/deleteDesigner.jsp");
         dispatcher.forward(request, response);
     }
 

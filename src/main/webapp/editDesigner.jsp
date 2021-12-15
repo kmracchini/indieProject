@@ -5,12 +5,11 @@
 
 <html>
 <body>
-<div class="container-fluid">
-  <div class="mx-5">
+<div class="container">
     <c:choose>
       <c:when test="${user.isAdmin == 1}">
-
-        <h2>Add/Edit Designer</h2>
+        <div class="mx-5 px-5">
+        <h2 class="mt-3">Add/Edit Designer</h2>
         <form id="editDesignerForm" method="post" action="editDesigner" class="needs-validation" novalidate>
           <div class="form-group">
             <input type="hidden" id="id" name="id" value="${designer.id}">
@@ -40,18 +39,17 @@
             <div class="invalid-feedback">Enter the designer's Etsy Shop ID</div>
           </div>
 
-
-
           <input type="submit" class="btn btn-primary" value="Add / Update">
           <input type="reset" class="btn btn-light" value="Clear">
         </form>
+  </div>
       </c:when>
       <c:otherwise>
-        <h2>You must be an admin to view this page.</h2>
+        <h2 class="mt-3">You must be an admin to view this page.</h2>
         <p><a href="index.jsp">Go back!</a></p>
       </c:otherwise>
     </c:choose>
-  </div>
+
 </div>
 
 <%@include file="footer.jsp"%>

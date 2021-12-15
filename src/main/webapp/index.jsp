@@ -9,6 +9,7 @@
 <div class="container-fluid">
     <div class="mx-5">
         <h2 class="mt-3">Stitchable</h2>
+        <img src="images/stitchable.png" alt="stitchable logo">
         <p>Stitchable is a project designed to help cross stichers find free patterns from designers they love. </p>
     </div>
 </div>

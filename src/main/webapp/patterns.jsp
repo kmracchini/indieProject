@@ -14,7 +14,7 @@
 <body>
 <div class="container-fluid">
     <div class="mx-5">
-        <h2>All Patterns</h2>
+        <h2 class="my-3">All Patterns</h2>
         <table id="patternTable" class="display">
             <thead>
             <th>Designer</th>

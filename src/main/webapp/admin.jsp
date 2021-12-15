@@ -18,10 +18,8 @@
     <div class="mx-5">
         <c:choose>
             <c:when test="${user.isAdmin == 1}">
-                <h2>Welcome, admin! </h2>
-
-                <h3>Designers</h3>
-                <a class="btn btn-primary m-2" href="editDesigner.jsp">Add New Designer</a>
+                <h2>Designers</h2>
+                <a class="btn btn-primary mx-2 mb-3 mt-2" href="editDesigner.jsp">Add New Designer</a>
                 <table id="designerTable" class="display">
                     <thead>
                     <tr>
@@ -44,8 +42,8 @@
                 </table>
 
 
-                <h3>Patterns</h3>
-                <a class="btn btn-primary m-3" href="addPattern">Add New Pattern</a>
+                <h2 class="mt-5">Patterns</h2>
+                <a class="btn btn-primary mx-2 mb-3 mt-2" href="addPattern">Add New Pattern</a>
                 <table id="patternTable" class="display">
                     <thead>
                     <tr>

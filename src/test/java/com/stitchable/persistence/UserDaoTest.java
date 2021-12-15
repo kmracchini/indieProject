@@ -104,7 +104,6 @@ public class UserDaoTest {
         Pattern pattern = (Pattern)patternDao.getById(1);
         User user = (User)dao.getById(1);
         user.addFavorite(pattern);
-        log.info("Just added " + pattern.getName() + " to " + user.getName() + "'s favorites");
         Set<Pattern> favorites = user.getFavoritePatterns();
         assertEquals(2, favorites.size());
     }
