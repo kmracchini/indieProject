@@ -13,40 +13,41 @@
 <html>
 <body>
 <div class="container-fluid">
-<table id="patternTable" class="display">
-    <thead>
-    <th>Designer</th>
-    <th>Name</th>
-    <th>Size (WxH)</th>
-    <th>Number of Colors</th>
-    <th>Stitched Example</th>
-    <th>Image</th>
-    <th>Link</th>
-    <c:if test="${user.userName != null}">
-        <th>Favorite</th>
-    </c:if>
+    <div class="mx-5">
+        <h2>All Patterns</h2>
+        <table id="patternTable" class="display">
+            <thead>
+            <th>Designer</th>
+            <th>Name</th>
+            <th>Size (WxH)</th>
+            <th>Number of Colors</th>
+            <th>Stitched Example</th>
+            <th>Image</th>
+            <th>Link</th>
+            <c:if test="${user.userName != null}">
+                <th>Favorite</th>
+            </c:if>
 
-    </thead>
-    <tbody>
-        <c:forEach var="pattern" items="${patterns}">
-            <tr>
-                <td>${pattern.designer.name}</td>
-                <td>${pattern.name}</td>
-                <td>${pattern.size} - ${pattern.width} x ${pattern.height}</td>
-                <td>${pattern.numberOfColors}</td>
-                <td>${pattern.stitchedExample}</td>
-                <td><a href="images/${pattern.image}">Pattern image</a></td>
-                <td><a href="${pattern.url}">Link to pattern</a></td>
-                <c:if test="${user.userName != null}">
-                    <td><a href="addFavorite?id=${pattern.id}">Add to Favorites</a></td>
-                </c:if>
+            </thead>
+            <tbody>
+            <c:forEach var="pattern" items="${patterns}">
+                <tr>
+                    <td>${pattern.designer.name}</td>
+                    <td>${pattern.name}</td>
+                    <td>${pattern.size} - ${pattern.width} x ${pattern.height}</td>
+                    <td>${pattern.numberOfColors}</td>
+                    <td>${pattern.stitchedExample}</td>
+                    <td><a href="images/${pattern.image}">Pattern image</a></td>
+                    <td><a href="${pattern.url}">Link to pattern</a></td>
+                    <c:if test="${user.userName != null}">
+                        <td><a href="addFavorite?id=${pattern.id}">Add to Favorites</a></td>
+                    </c:if>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
 
-
-
-            </tr>
-        </c:forEach>
-    </tbody>
-</table>
 </div>
 </body>
 </html>

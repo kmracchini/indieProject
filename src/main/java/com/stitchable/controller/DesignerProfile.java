@@ -42,6 +42,7 @@ public class DesignerProfile extends HttpServlet {
             request.setAttribute("shopURL", item.getUrl());
             request.setAttribute("listings", item.getListingActiveCount());
             request.setAttribute("icon", item.getIconUrlFullxfull());
+            request.setAttribute("favorites", item.getNumFavorers());
         }
 
         request.setAttribute("designer", dao.getById(id));
