@@ -35,7 +35,6 @@
 /target/
 /log/
 /lib/
-/logs/
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
@@ -55,3 +54,6 @@ fabric.properties
 /src/main/.ebextensions/
 /src/main/.platform/
 /src/main/resources/etsyapi.properties
+
+#Log files
+/logs
