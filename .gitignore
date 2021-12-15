@@ -56,4 +56,4 @@ fabric.properties
 /src/main/resources/etsyapi.properties
 
 #Log files
-/logs
+/logs/
