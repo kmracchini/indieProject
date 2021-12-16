@@ -24,3 +24,6 @@ To begin with, I will start with free patterns available from designers on their
 * [Screen Design](DesignDocuments/ScreenDesign)
 * [Project Plan](ProjectPlan.md)
 * [Time Log](TimeLog.md)
+
+###Presentation 
+[YouTube video](https://www.youtube.com/watch?v=JuxQF0Sc8_Y)
