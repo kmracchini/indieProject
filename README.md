@@ -25,5 +25,5 @@ To begin with, I will start with free patterns available from designers on their
 * [Project Plan](ProjectPlan.md)
 * [Time Log](TimeLog.md)
 
-###Presentation 
+### Presentation 
 [YouTube video](https://www.youtube.com/watch?v=JuxQF0Sc8_Y)
