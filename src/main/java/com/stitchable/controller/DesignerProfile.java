@@ -24,8 +24,19 @@ import java.util.List;
         urlPatterns = {"/designerProfile"}
 )
 @Log4j2
+/**
+ * Gets etsy api information for designer
+ */
 public class DesignerProfile extends HttpServlet {
 
+    /**
+     *  Gets etsy api information and database information for designer and forwards to profile page
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -46,8 +57,6 @@ public class DesignerProfile extends HttpServlet {
         }
 
         request.setAttribute("designer", dao.getById(id));
-
-
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/designerProfile.jsp");
         dispatcher.forward(request,response);

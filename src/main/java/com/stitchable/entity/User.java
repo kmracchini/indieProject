@@ -45,7 +45,7 @@ public class User {
      * @param name     the name
      * @param email    the email
      * @param userName the username
-     * @param isAdmin if the user is an admin
+     * @param isAdmin  if the user is an admin
      */
     public User(String name, String email, String userName, int isAdmin) {
         this.name = name;
@@ -54,11 +54,21 @@ public class User {
         this.isAdmin = isAdmin;
     }
 
+    /**
+     * Add favorite.
+     *
+     * @param pattern the pattern
+     */
     public void addFavorite(Pattern pattern) {
         favoritePatterns.add(pattern);
         pattern.getUsers().add(this);
     }
 
+    /**
+     * Remove favorite.
+     *
+     * @param pattern the pattern
+     */
     public void removeFavorite(Pattern pattern) {
         favoritePatterns.remove(pattern);
         pattern.getUsers().remove(this);

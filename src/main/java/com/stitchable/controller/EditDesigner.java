@@ -12,12 +12,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+
 @WebServlet(
         urlPatterns = {"/editDesigner"}
 )
 @Log4j2
+/**
+ * Used to add or edit a designer
+ */
 public class EditDesigner extends HttpServlet {
 
+    /**
+     * Gets designer information using ID parameter, sets designer in attribute and forwards to edit designer JSP
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         GenericDao designerDao = new GenericDao(Designer.class);
@@ -29,6 +40,13 @@ public class EditDesigner extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
+    /**
+     * Gets designer information from form and updates it if designer already exists, otherwise adds to database
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         GenericDao designerDao = new GenericDao(Designer.class);

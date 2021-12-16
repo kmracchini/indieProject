@@ -14,13 +14,23 @@ import javax.persistence.criteria.Expression;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
+/**
+ * The type Generic dao.
+ *
+ * @param <T> the type parameter
+ */
 @Log4j2
+/**
+ * Generic dao used to access entity information in database
+ */
+
 public class GenericDao<T> {
 
-    private Class<T> type;
+    private final Class<T> type;
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     /**
+     * Instantiates a new Generic dao.
      *
      * @param type the entity type, for example User
      */
@@ -28,10 +38,21 @@ public class GenericDao<T> {
         this.type = type;
     }
 
+    /**
+     * Gets the session from the session factory provider
+     * @return Session the session
+     */
     private Session getSession() {
         return SessionFactoryProvider.getSessionFactory().openSession();
     }
 
+    /**
+     * Gets an entity by id.
+     *
+     * @param <T> the type parameter
+     * @param id  the id
+     * @return the by id
+     */
     public <T>T getById(int id) {
         Session session = getSession();
         T entity = (T)session.get(type, id);
@@ -39,6 +60,11 @@ public class GenericDao<T> {
         return entity;
     }
 
+    /**
+     * Gets all entities.
+     *
+     * @return the all
+     */
     public List<T> getAll() {
         Session session = getSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
@@ -49,6 +75,11 @@ public class GenericDao<T> {
         return list;
     }
 
+    /**
+     * Deletes an entity.
+     *
+     * @param entity the entity
+     */
     public void delete(T entity) {
         Session session = getSession();
         Transaction transaction = session.beginTransaction();
@@ -57,6 +88,11 @@ public class GenericDao<T> {
         session.close();
     }
 
+    /**
+     * Saves or updates an entity.
+     *
+     * @param entity the entity
+     */
     public void saveOrUpdate(T entity) {
         Session session = getSession();
         Transaction transaction = session.beginTransaction();
@@ -65,6 +101,12 @@ public class GenericDao<T> {
         session.close();
     }
 
+    /**
+     * Inserts an entity into the database.
+     *
+     * @param entity the entity
+     * @return the int
+     */
     public int insert(T entity) {
         int id = 0;
         Session session = getSession();
@@ -75,6 +117,13 @@ public class GenericDao<T> {
         return id;
     }
 
+    /**
+     * Gets an entity by an exact match in the database for the specified property
+     *
+     * @param propertyName the property name
+     * @param value        the value
+     * @return the by property equals
+     */
     public List<T> getByPropertyEquals(String propertyName, String value) {
         Session session = getSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
@@ -86,6 +135,13 @@ public class GenericDao<T> {
         return queryResults;
     }
 
+    /**
+     * Gets an entity by an approximate match in the database for the specified property
+     *
+     * @param propertyName the property name
+     * @param value        the value
+     * @return the by property like
+     */
     public List<T> getByPropertyLike(String propertyName, String value) {
         Session session = getSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
@@ -98,6 +154,13 @@ public class GenericDao<T> {
         return queryResults;
     }
 
+    /**
+     * Gets an entity by a property greater than
+     *
+     * @param propertyName the property name
+     * @param value        the value
+     * @return the by greater than
+     */
     public List<T> getByGreaterThan(String propertyName, int value) {
         Session session = getSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
@@ -109,6 +172,13 @@ public class GenericDao<T> {
         return queryResults;
     }
 
+    /**
+     * Gets an entity by a property less than
+     *
+     * @param propertyName the property name
+     * @param value        the value
+     * @return the by less than
+     */
     public List<T> getByLessThan(String propertyName, int value) {
         Session session = getSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
@@ -120,6 +190,13 @@ public class GenericDao<T> {
         return queryResults;
     }
 
+    /**
+     * Gets a unique result by passing in the property name and value
+     *
+     * @param propertyName the property name
+     * @param value        the value
+     * @return the by property equals unique
+     */
     public T getByPropertyEqualsUnique(String propertyName, String value) {
         Session session = getSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();

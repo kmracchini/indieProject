@@ -17,8 +17,18 @@ import java.io.IOException;
         urlPatterns = {"/search"}
 )
 @Log4j2
+/**
+ * Searches patterns based on entered criteria
+ */
 public class SearchPatterns extends HttpServlet {
 
+    /**
+     * Uses search term from forms to search database based on search type, forwards to search JSP
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         GenericDao dao = new GenericDao(Pattern.class);

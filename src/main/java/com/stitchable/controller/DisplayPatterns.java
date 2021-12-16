@@ -12,12 +12,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+
 @WebServlet(
         urlPatterns = {"/allPatterns"}
 )
 @Log4j2
+/**
+ * Gets information for all patterns
+ */
 public class DisplayPatterns extends HttpServlet {
 
+    /**
+     * Gets information for all patterns and forwards to patterns JSP
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

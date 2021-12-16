@@ -14,9 +14,20 @@ import java.io.IOException;
 @WebServlet(
         urlPatterns = {"/logOut"}
 )
+
 @Log4j2
+/**
+ * Ends session to log user out
+ */
 public class LogOut extends HttpServlet {
 
+    /**
+     * Ends session which logs user out, and forwards to index page
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();

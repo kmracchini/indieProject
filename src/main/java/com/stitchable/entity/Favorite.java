@@ -6,6 +6,9 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
+/**
+ * The type Favorite.
+ */
 @NoArgsConstructor
 @Data
 
@@ -27,6 +30,12 @@ public class Favorite {
     @JoinColumn(name="pattern_id", referencedColumnName = "id")
     private Pattern pattern;
 
+    /**
+     * Instantiates a new Favorite.
+     *
+     * @param user    the user
+     * @param pattern the pattern
+     */
     public Favorite(User user, Pattern pattern) {
         this.user = user;
         this.pattern = pattern;

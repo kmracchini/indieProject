@@ -24,7 +24,7 @@ public class Database {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
-    private static Database instance = new Database();
+    private static final Database instance = new Database();
 
     private Properties properties;
 

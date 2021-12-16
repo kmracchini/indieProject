@@ -207,11 +207,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
      */
     private boolean verifyUser(String username) {
         boolean userExists;
-        if (dao.getByPropertyEqualsUnique("userName", username) != null) {
-            userExists = true;
-        } else {
-            userExists = false;
-        }
+        userExists = dao.getByPropertyEqualsUnique("userName", username) != null;
         return userExists;
     }
 

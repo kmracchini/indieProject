@@ -12,12 +12,24 @@ import javax.ws.rs.core.MediaType;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * Accesses Etsy API to retrieve shop information
+ */
 @Log4j2
 public class EtsyShopDao {
 
+    /**Properties file with etsy api information **/
     private static final String ETSY_PROPERTIES = "/etsyapi.properties";
+
+    /**Properties object **/
     private Properties properties;
 
+    /**
+     * Gets etsy response.
+     *
+     * @param shopId the shop id
+     * @return the etsy response
+     */
     public Shop getEtsyResponse(int shopId) {
         loadProperties();
         String website = properties.getProperty("url");
@@ -40,6 +52,9 @@ public class EtsyShopDao {
         return etsyShop;
     }
 
+    /**
+     * Loads properties file
+     */
     private void loadProperties() {
         properties = new Properties();
         try {

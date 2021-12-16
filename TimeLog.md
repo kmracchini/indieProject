@@ -34,3 +34,10 @@
 |11/28/21 | Started message beans exercise, but didn't get super far. Was able to fix authentication issue by being away from it for a few days with a clear head. | 1 |
 |11/30/21 | Finished message beans exercise eventually | 2 |
 |12/3/21 | Worked on favorites (many to many relationship) and getting API working with pulling in shopID from database. Tried to get "getAge()" method working but I can't figure out how to search with it...  | 4
+|12/5/21 | Implemented search by size, added API information to designer profile | 2
+|12/6/21 | Started admin section for CRUD, fixed isAdmin field, made requirement to be admin in order to see content 
+|12/9/21| Add pattern form | 2
+|12/11/21 | Added admin gatekeeping to all admin pages, CRUD for designer and patterns, added Etsy API information to properties file | 4
+|12/12/21 | Got adding and removing to favorites working, added favoriting functionality to pattern pages and profile | 3
+|12/14/21 | Worked on CSS, added JS validation, got logging working again | 3 
+|12/15/21 | Recorded presentation, fixed bugs (aka dumb mistakes), double checked code, added javadoc | 4

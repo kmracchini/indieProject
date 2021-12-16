@@ -12,12 +12,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+
 @WebServlet(
         urlPatterns = {"/addPattern"}
 )
-
+/**
+ * Used to add a pattern to the database
+ */
 public class AddPattern extends HttpServlet {
 
+    /**
+     * Adds list of designers to attribute and forwards to edit pattern JSP
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         GenericDao designerDao = new GenericDao(Designer.class);

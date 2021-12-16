@@ -15,6 +15,8 @@
     <li>ID: ${pattern.id}</li>
     <li>Name: ${pattern.name}</li>
     <li>Designer: ${pattern.designer.name}</li>
+    <li><a href="images/${pattern.image}">Pattern image</li>
+    <li><a href="${pattern.url}">Link to pattern</a></li>
 </ul>
 <form id="deletePattern" method="post" action="deletePattern">
     <input type="hidden" id="id" name="id" value="${pattern.id}">

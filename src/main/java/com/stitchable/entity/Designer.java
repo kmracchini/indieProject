@@ -72,6 +72,14 @@ public class Designer {
         this.etsyId = etsyId;
     }
 
+    /**
+     * Instantiates a new designer
+     * @param id
+     * @param name
+     * @param website
+     * @param logo
+     * @param etsyId
+     */
     public Designer(int id, String name, String website, String logo, int etsyId) {
         this.id = id;
         this.name = name;

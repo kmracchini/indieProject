@@ -12,12 +12,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+
 @WebServlet(
         urlPatterns = {"/deleteDesigner"}
 )
 @Log4j2
+/**
+ * Used to delete a designer from the database
+ */
 public class DeleteDesigner extends HttpServlet {
 
+    /**
+     * Gets designer information from ID parameter and forwards to delete designer JSP
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         GenericDao dao = new GenericDao(Designer.class);
@@ -29,13 +40,19 @@ public class DeleteDesigner extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
+    /**
+     * Gets ID of designer from form and deletes designer from database
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int patternID = Integer.valueOf(request.getParameter("id"));
+        int designerID = Integer.valueOf(request.getParameter("id"));
         GenericDao dao = new GenericDao(Designer.class);
-        Designer designer = (Designer) dao.getById(patternID);
-        dao.delete(designer);
-        log.info("Designer " + designer.getName() + " deleted");
+        dao.delete(dao.getById(designerID));
+        log.info("Deleting designer");
         RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
         dispatcher.forward(request, response);
     }

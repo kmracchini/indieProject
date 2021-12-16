@@ -17,8 +17,18 @@ import java.io.IOException;
         urlPatterns = {"/admin"}
 )
 @Log4j2
+/**
+ * Used to populate data on site admin page
+ */
 public class Admin extends HttpServlet {
 
+    /**
+     * Adds all patterns and all designers to attributes and forwards to admin.jsp
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         GenericDao patternDao = new GenericDao(Pattern.class);

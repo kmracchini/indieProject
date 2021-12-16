@@ -46,6 +46,22 @@ public class Pattern {
     @ToString.Exclude
     private Set<User> users;
 
+    /**
+     * Instantiates a new Pattern.
+     *
+     * @param id              the id
+     * @param name            the name
+     * @param width           the width
+     * @param height          the height
+     * @param numberOfColors  the number of colors
+     * @param keywords        the keywords
+     * @param features        the features
+     * @param stitchedExample the stitched example
+     * @param image           the image
+     * @param url             the url
+     * @param designer        the designer
+     * @param size            the size
+     */
     public Pattern(int id, String name, int width, int height, int numberOfColors, String keywords, String features, String stitchedExample, String image, String url, Designer designer, String size) {
         this.id = id;
         this.name = name;
@@ -61,6 +77,21 @@ public class Pattern {
         this.size = size;
     }
 
+    /**
+     * Instantiates a new Pattern.
+     *
+     * @param name            the name
+     * @param width           the width
+     * @param height          the height
+     * @param numberOfColors  the number of colors
+     * @param keywords        the keywords
+     * @param features        the features
+     * @param stitchedExample the stitched example
+     * @param image           the image
+     * @param url             the url
+     * @param designer        the designer
+     * @param size            the size
+     */
     public Pattern(String name, int width, int height, int numberOfColors, String keywords, String features, String stitchedExample, String image, String url, Designer designer, String size) {
         this.name = name;
         this.width = width;

@@ -13,12 +13,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+
 @WebServlet(
         urlPatterns = {"/editPattern"}
 )
 @Log4j2
+/**
+ * Used to add or edit a pattern
+ */
 public class EditPattern extends HttpServlet {
 
+    /**
+     * Gets information from form and updates pattern if it already exists, otherwise adds to database
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         GenericDao dao = new GenericDao(Pattern.class);
@@ -35,9 +46,7 @@ public class EditPattern extends HttpServlet {
         String imageURL = request.getParameter("image");
         String patternURL = request.getParameter("url");
         int designerID = Integer.valueOf(request.getParameter("designer"));
-        log.info("The designer id is " + designerID);
         Designer designer = (Designer)designerDao.getById(designerID);
-        log.info("The designer is " + designer.getName());
 
         if (request.getParameter("id") == "") {
             Pattern newPattern = new Pattern(patternName, patternWidth, patternHeight, numberOfColors, keywords, features, stitchedExample, imageURL, patternURL, designer, patternSize);
@@ -54,6 +63,14 @@ public class EditPattern extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
+    /**
+     *
+     * Gets pattern information using ID, sets pattern, designer information and forwards to edit pattern JSP
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         GenericDao dao = new GenericDao(Pattern.class);

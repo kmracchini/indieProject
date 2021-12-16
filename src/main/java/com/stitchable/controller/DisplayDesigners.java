@@ -20,8 +20,18 @@ import java.io.IOException;
 )
 
 @Log4j2
+/**
+ * Gets information for all designers
+ */
 public class DisplayDesigners extends HttpServlet {
 
+    /**
+     * Gets information for all designers and forwards to designers JSP
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

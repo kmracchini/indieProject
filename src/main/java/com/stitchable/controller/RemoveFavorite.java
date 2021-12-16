@@ -16,8 +16,18 @@ import java.io.IOException;
 @WebServlet(
         urlPatterns = {"/removeFavorite"}
 )
+/**
+ * Removes pattern from user's favorites
+ */
 public class RemoveFavorite extends HttpServlet {
 
+    /**
+     * Gets user and pattern information, removes pattern from user's favorite patterns list, forwards to profile JSP
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         GenericDao patternDao = new GenericDao(Pattern.class);

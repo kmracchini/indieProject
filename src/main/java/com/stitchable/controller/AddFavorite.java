@@ -13,11 +13,22 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+
 @WebServlet(
         urlPatterns = {"/addFavorite"}
 )
+/**
+ * Used to add a pattern to user's favorites
+ */
 public class AddFavorite extends HttpServlet {
 
+    /**
+     * Adds a pattern to a user's favorite pattern list and then forwards to the user's profile
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         GenericDao patternDao = new GenericDao(Pattern.class);

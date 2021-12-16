@@ -1,3 +1,5 @@
-[INFO ] 2021-12-15 16:59:33.637 [http-nio-8080-exec-16] LogOut - User successfully logged out
-[INFO ] 2021-12-15 17:00:20.540 [http-nio-8080-exec-19] Auth - Just added a newbie to the database! newuser1
-[INFO ] 2021-12-15 17:00:50.766 [http-nio-8080-exec-16] LogOut - User successfully logged out
+[INFO ] 2021-12-15 19:41:02.376 [http-nio-8080-exec-7] DeletePattern - Pattern Test pattern 2 deleted
+[INFO ] 2021-12-15 19:41:35.825 [http-nio-8080-exec-9] EditPattern - The designer id is 12
+[INFO ] 2021-12-15 19:41:36.023 [http-nio-8080-exec-9] EditPattern - The designer is Test designer
+[INFO ] 2021-12-15 19:41:36.331 [http-nio-8080-exec-9] EditPattern - Added pattern Test pattern 2
+[INFO ] 2021-12-15 19:45:34.718 [http-nio-8080-exec-10] DeleteDesigner - Deleting designer

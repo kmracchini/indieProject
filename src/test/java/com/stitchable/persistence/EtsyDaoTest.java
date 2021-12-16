@@ -11,6 +11,9 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @Log4j2
+/**
+ * Tests getting etsy information from API
+ */
 public class EtsyDaoTest {
 
     @Test
@@ -22,11 +25,11 @@ public class EtsyDaoTest {
         Shop shop = dao.getEtsyResponse(shopCode);
         List<ResultsItem> items = shop.getResults();
         assertNotNull(shop);
-//        for (ResultsItem item : items) {
-//            log.info("Shop name: " + item.getShopName());
-//            log.info("Shop url: " + item.getUrl());
-//            log.info("Shop image: " + item.getImageUrl760x100());
-//        }
+        for (ResultsItem item : items) {
+            log.info("Shop name: " + item.getShopName());
+            log.info("Shop url: " + item.getUrl());
+            log.info("Shop image: " + item.getImageUrl760x100());
+        }
     }
 
 }
